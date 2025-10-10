@@ -1,0 +1,269 @@
+[
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--stealth--artwork--watch-one-pixel",
+    "playmode": "stealth",
+    "mission_prompt": "Fix your eyes on one tiny tile. When it swaps to AI, breathe out once like you’re letting it go.",
+    "award_text_on_complete": "Achievement unlocked: single-pixel witness.",
+    "fail_text_on_fail": "Too slippery? Pick a bigger patch and try one more cycle."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--stealth--absurd--progress-bar-face",
+    "playmode": "stealth",
+    "mission_prompt": "Pretend a progress bar crawls across the portrait. Nod when it hits 42%.",
+    "award_text_on_complete": "Patch note saved: 42% sync achieved.",
+    "fail_text_on_fail": "No bar? Blink to refresh the UI in your head."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--stealth--curator--tag-accept-reject",
+    "playmode": "stealth",
+    "mission_prompt": "Borrow one word from the wall text (or make one). Silently label this cycle. Keep or delete.",
+    "award_text_on_complete": "Curatorial tag compiled.",
+    "fail_text_on_fail": "If no word fits, tag it “unspecified” and move on."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--social--artwork--real-or-render",
+    "playmode": "social",
+    "mission_prompt": "Ask a nearby player to watch one tile with you this cycle. After it swaps, each say just one word: “real” or “render.”",
+    "award_text_on_complete": "Co-op complete: two-word chorus.",
+    "fail_text_on_fail": "If they pass, whisper your own word and nod thanks."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--social--absurd--approximation-shimmer",
+    "playmode": "social",
+    "mission_prompt": "Quietly ask someone if they can see the “approximation shimmer” around the cheek. Agree politely either way.",
+    "award_text_on_complete": "UI revealed (imaginary).",
+    "fail_text_on_fail": "No partner? Trace the shimmer in the air with one fingertip, tiny."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--social--curator--why-vertical",
+    "playmode": "social",
+    "mission_prompt": "Ask one visitor: “Why vertical, you think?” Collect a five-word answer.",
+    "award_text_on_complete": "Shadow curator badge: theory harvested.",
+    "fail_text_on_fail": "No reply? Give yourself a five-word guess and smile."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--improvisational--artwork--pixel-rotation",
+    "playmode": "improvisational",
+    "mission_prompt": "Hold your palm up like a pixel tile. Rotate 90° → 90° → 90° with the cycle. Tiny bow to the screen.",
+    "award_text_on_complete": "Gesture compiled: loop embodied.",
+    "fail_text_on_fail": "Crowded buffer? Do fingertip-only rotations at your side."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--improvisational--absurd--save-cycle",
+    "playmode": "improvisational",
+    "mission_prompt": "Say softly once: “Saving progress… Cycle captured.” Click your tongue like a quick-save.",
+    "award_text_on_complete": "Save slot updated: pixel epoch.",
+    "fail_text_on_fail": "Too exposed? Mime the click and keep it secret."
+  },
+  {
+    "artwork_id": "ada-ada-ada--pixel-self",
+    "mission_id": "ada-ada-ada--improvisational--curator--ten-second-tour",
+    "playmode": "improvisational",
+    "mission_prompt": "Give a 10s micro-tour to the air: “Authorship, but in 250 small yes/no decisions.” Open-palm gesture, done.",
+    "award_text_on_complete": "Unofficial docent: loop explained.",
+    "fail_text_on_fail": "If people crowd, whisper the line to your sleeve."
+  },
+
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--stealth--artwork--petal-zoom",
+    "playmode": "stealth",
+    "mission_prompt": "Zoom your attention to one petal/particle. Count three breaths while it flickers. Name its color in your head like a spell.",
+    "award_text_on_complete": "Achievement unlocked: petal lock-on.",
+    "fail_text_on_fail": "Color won’t stick? Borrow the nearest word from a label."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--stealth--absurd--physics-toggle",
+    "playmode": "stealth",
+    "mission_prompt": "Pretend there’s a gravity slider for this piece. In your mind, set it to ‘butterfly.’ Watch for a micro-change.",
+    "award_text_on_complete": "Patch applied: butterfly physics.",
+    "fail_text_on_fail": "No change? Toggle back to ‘default’ and smirk."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--stealth--curator--frame-test",
+    "playmode": "stealth",
+    "mission_prompt": "Without moving, ask: does the frame/light make this bloom or cage it? Pick one word, keep it.",
+    "award_text_on_complete": "Curatorial tag synced: bloom/cage.",
+    "fail_text_on_fail": "If both feel true, hyphenate them and carry on."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--social--artwork--two-eyes",
+    "playmode": "social",
+    "mission_prompt": "Invite someone: “One eye each?” You take left side, they take right. After 5 seconds, trade one word: what you saw.",
+    "award_text_on_complete": "Co-op panorama rendered.",
+    "fail_text_on_fail": "Solo mode: do left eye, then right, and trade words with yourself."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--social--absurd--npc-gardener",
+    "playmode": "social",
+    "mission_prompt": "Ask a visitor: “Are you the NPC gardener for this level?” Compliment their algorithm either way.",
+    "award_text_on_complete": "UI ping: gardener acknowledged.",
+    "fail_text_on_fail": "If they look confused, upgrade compliment to ‘nice bloom parameters.’"
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--social--curator--placement-guess",
+    "playmode": "social",
+    "mission_prompt": "Ask: “If this moved two meters, what would break?” Collect a one-line guess.",
+    "award_text_on_complete": "Shadow curator badge: placement theory.",
+    "fail_text_on_fail": "No answer? Whisper your own breakage and move on."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--improvisational--artwork--soft-bloom",
+    "playmode": "improvisational",
+    "mission_prompt": "Open your hand like a flower → close → open. Three loops to match the piece, then stillness.",
+    "award_text_on_complete": "Micro-choreographer: bloom synced.",
+    "fail_text_on_fail": "If space is tight, do it near your chest, tiny."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--improvisational--absurd--difficulty-flutter",
+    "playmode": "improvisational",
+    "mission_prompt": "Ask softly to the room: “What difficulty is this garden on?” Answer yourself: “Story mode.”",
+    "award_text_on_complete": "Difficulty discovered: story mode.",
+    "fail_text_on_fail": "If it feels too loud, mouth the words and smile."
+  },
+  {
+    "artwork_id": "petal-engine",
+    "mission_id": "petal-engine--improvisational--curator--label-applause",
+    "playmode": "improvisational",
+    "mission_prompt": "Read the label in your head, then give it one tiny clap. Just one. Done.",
+    "award_text_on_complete": "Docent ping: label acknowledged.",
+    "fail_text_on_fail": "If it startles anyone, switch to a silent clap next time."
+  },
+
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--stealth--artwork--latency-count",
+    "playmode": "stealth",
+    "mission_prompt": "Count the delay between your blink and the garden’s response. Guess the milliseconds like a secret.",
+    "award_text_on_complete": "Latency sensed: garden handshake.",
+    "fail_text_on_fail": "No delay? Pretend the counter says ‘000’ and keep walking."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--stealth--absurd--fps-check",
+    "playmode": "stealth",
+    "mission_prompt": "Ask yourself, deadpan: “Are the plants capped at 30 FPS?” Answer yourself with a single eyebrow.",
+    "award_text_on_complete": "Frame rate audited.",
+    "fail_text_on_fail": "Eyebrow uncooperative? Use a tiny shoulder shrug."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--stealth--curator--path-intent",
+    "playmode": "stealth",
+    "mission_prompt": "Trace the path lines with your eyes. Decide: guide-rails or soft drift? Keep your verdict.",
+    "award_text_on_complete": "Curatorial path decoded.",
+    "fail_text_on_fail": "If undecided, label it ‘both/and’ and proceed."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--social--artwork--lag-demo",
+    "playmode": "social",
+    "mission_prompt": "Invite someone to speak one word together. You say it on time; they delay by one beat. Swap roles once.",
+    "award_text_on_complete": "Co-op lag demonstrated.",
+    "fail_text_on_fail": "If they decline, do both roles in your own head."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--social--absurd--pop-up-msg",
+    "playmode": "social",
+    "mission_prompt": "Ask a neighbor: “Did you get the pop-up just now?” Nod gravely when they say anything.",
+    "award_text_on_complete": "System notification acknowledged.",
+    "fail_text_on_fail": "No neighbor? Whisper: “Pop-up dismissed.” to yourself."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--social--curator--light-guess",
+    "playmode": "social",
+    "mission_prompt": "With consent, trade one-sentence guesses about why this light is this color right here.",
+    "award_text_on_complete": "Shadow curator: chroma theory traded.",
+    "fail_text_on_fail": "If no trade, gift yourself a sentence and carry on."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--improvisational--artwork--slow-walk",
+    "playmode": "improvisational",
+    "mission_prompt": "Walk three steps at plant-speed: slow, slower, pause. Report, softly: “Sync achieved.”",
+    "award_text_on_complete": "Movement patched: garden tempo.",
+    "fail_text_on_fail": "Pathway busy? Do the steps in place with just your breath."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--improvisational--absurd--debug-whisper",
+    "playmode": "improvisational",
+    "mission_prompt": "Lean slightly and whisper: “Known issue: lighting engine.” Tap the air like submitting a bug.",
+    "award_text_on_complete": "Bug filed (imaginary).",
+    "fail_text_on_fail": "If it feels weird, submit silently with a tiny nod."
+  },
+  {
+    "artwork_id": "lag-garden",
+    "mission_id": "lag-garden--improvisational--curator--main-questline",
+    "playmode": "improvisational",
+    "mission_prompt": "Stand under the brightest patch and declare, once, quiet-but-clear: “This is the main questline.”",
+    "award_text_on_complete": "Narrative flag planted.",
+    "fail_text_on_fail": "If it echoes, downgrade to a mouthed declaration."
+  },
+
+  {
+    "artwork_id": "exhibition-wide",
+    "mission_id": "global--stealth--absurd--invisible-wall-apology",
+    "playmode": "stealth",
+    "mission_prompt": "Pause by a doorway, stop short, and whisper an apology to an invisible wall.",
+    "award_text_on_complete": "Collision detected: manners retained.",
+    "fail_text_on_fail": "Crowd heavy? Just mime the tiny apology with your eyes."
+  },
+  {
+    "artwork_id": "exhibition-wide",
+    "mission_id": "global--social--absurd--npc-check",
+    "playmode": "social",
+    "mission_prompt": "Ask someone, gently: “Feeling like an NPC today?” Nod knowingly at any answer.",
+    "award_text_on_complete": "Dialogue tree unlocked.",
+    "fail_text_on_fail": "No one nearby? Ask a bench. Bench says nothing: perfect."
+  },
+  {
+    "artwork_id": "exhibition-wide",
+    "mission_id": "global--improvisational--absurd--t-pose-ping",
+    "playmode": "improvisational",
+    "mission_prompt": "Hold a micro T-pose for two seconds near any work. Release like nothing happened.",
+    "award_text_on_complete": "Rig calibrated.",
+    "fail_text_on_fail": "If space is tight, T-pose with just your thumbs."
+  },
+  {
+    "artwork_id": "exhibition-wide",
+    "mission_id": "global--social--curator--exit-sign-lore",
+    "playmode": "social",
+    "mission_prompt": "Ask a passerby: “What does the exit sign mean in this narrative?” Thank them for any lore.",
+    "award_text_on_complete": "Worldbuilding gathered.",
+    "fail_text_on_fail": "If no passerby, gift yourself a one-line lore drop."
+  },
+  {
+    "artwork_id": "exhibition-wide",
+    "mission_id": "global--stealth--artwork--paused-freeze",
+    "playmode": "stealth",
+    "mission_prompt": "Freeze for three breaths in the middle of a room like you’ve been paused. Unpause with a tiny head tilt.",
+    "award_text_on_complete": "Time respected: resume game.",
+    "fail_text_on_fail": "If it blocks someone, step aside and do a one-breath freeze."
+  },
+  {
+    "artwork_id": "exhibition-wide",
+    "mission_id": "global--improvisational--absurd--equip-empathy",
+    "playmode": "improvisational",
+    "mission_prompt": "Open an invisible menu mid-walk and say, softly: “Equipping empathy… equipped.”",
+    "award_text_on_complete": "Buff applied: charisma +1.",
+    "fail_text_on_fail": "Too public? Tap your chest once as a silent equip."
+  }
+]

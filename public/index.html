@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist+Mono:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Exhibition Simulacrum</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --panel: #868686;
+        --text: #000000;
+        --dim: #afafaf;
+        --border: #000000;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Geist Mono", monospace;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+      }
+      .frame {
+        width: 100%;
+        height: 100%;
+        max-width: 800px;
+        background: var(--panel);
+        position: relative;
+        overflow: hidden;
+      }
+      .screen {
+        position: absolute;
+        inset: 10px 10px 120px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 16px;
+        overflow: auto;
+      }
+      .choices {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      button {
+        padding: 10px 15px;
+        background: white;
+        border-radius: 15px;
+      }
+      button:hover {
+        background-color: lightyellow;
+      }
+      button:hover {
+        transform: translateY(-1px);
+      }
+      .playerline,
+      .line {
+        white-space: pre-wrap;
+        margin: 0 0 5px;
+        border: 2px solid var(--border);
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .playerline {
+        text-align: right;
+        background-color: var(--dim);
+      }
+      .dim {
+        color: var(--dim);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div id="screen" class="screen" aria-live="polite"></div>
+      <div id="choices" class="choices"></div>
+    </div>
+    <script>
+      const screen = document.getElementById("screen");
+      const choices = document.getElementById("choices");
+
+      function print(lines, isPlayer) {
+        (lines || []).forEach((t) => {
+          const d = document.createElement("div");
+          d.className = isPlayer ? "playerline" : "line";
+
+          d.textContent = t;
+          screen.appendChild(d);
+        });
+        screen.scrollTop = screen.scrollHeight;
+      }
+      function clearChoices() {
+        choices.innerHTML = "";
+      }
+
+      function renderEvents(events) {
+        (events || []).forEach((ev) => {
+          if (ev.type === "image") {
+            const fig = document.createElement("figure");
+            fig.style.margin = "8px 0";
+            const img = document.createElement("img");
+            img.src = ev.url;
+            img.alt = ev.alt || "";
+            img.style.maxWidth = "100%";
+            img.style.borderRadius = "8px";
+            fig.appendChild(img);
+            if (ev.caption) {
+              const cap = document.createElement("figcaption");
+              cap.className = "line dim";
+              cap.textContent = ev.caption;
+              fig.appendChild(cap);
+            }
+            screen.appendChild(fig);
+          }
+          if (ev.type === "video") {
+            const vid = document.createElement("video");
+            vid.src = ev.url;
+            vid.controls = true;
+            vid.playsInline = true;
+            vid.muted = true;
+            vid.loop = true; // autoplay-friendly
+            vid.autoplay = true;
+            vid.style.maxWidth = "100%";
+            vid.style.borderRadius = "8px";
+            vid.style.margin = "8px 0";
+            screen.appendChild(vid);
+            if (ev.caption) {
+              const cap = document.createElement("div");
+              cap.className = "line dim";
+              cap.textContent = ev.caption;
+              screen.appendChild(cap);
+            }
+          }
+        });
+        screen.scrollTop = screen.scrollHeight;
+      }
+
+      async function call(action, payload) {
+        const res = await fetch("/api/act", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action, payload }),
+        });
+        const ui = await res.json();
+        print(ui.lines, false);
+        renderEvents(ui.events); // ← NEW
+        clearChoices();
+
+        (ui.choices || []).forEach((c) => {
+          const b = document.createElement("button");
+          b.textContent = c.label;
+          b.onclick = () => {
+            print([c.label], true);
+            call(c.action, c.payload || {});
+          };
+          choices.appendChild(b);
+        });
+      }
+
+      call("start");
+    </script>
+  </body>
+</html>
