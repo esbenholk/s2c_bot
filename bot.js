@@ -20,6 +20,8 @@ app.use(bodyParser.json());
 
 require("dotenv").config();
 
+const { collageImages } = require("./collage");
+
 let readytoplayprompt = "send me on a side quest";
 let needtoentersimulation = "take me into the simulation";
 let takemetothebar = "lets go to the bar";
@@ -63,37 +65,39 @@ if (process.env.NODE_ENV === "production") {
   bot = new TelegramBot(token, { polling: true });
 }
 
-// Global cache for structured missions
-let MISSIONS = [];
+// Global cache for structured quests
+let questS = [];
 
-function isValidMission(m) {
+// Per-chat scratch space to stash incoming photos
+const collageBuckets = new Map(); // chatId -> Buffer[]
+
+function isValidquest(m) {
   return (
     m &&
     typeof m.artwork_id === "string" &&
-    typeof m.mission_id === "string" &&
+    typeof m.quest_id === "string" &&
     typeof m.playmode === "string" &&
-    typeof m.mission_prompt === "string" &&
+    typeof m.quest_prompt === "string" &&
     typeof m.award_text_on_complete === "string" &&
     typeof m.fail_text_on_fail === "string"
   );
 }
 
-async function loadMissions(filePath = path.join(__dirname, "missions.json")) {
+async function loadquests(filePath = path.join(__dirname, "quests.json")) {
   const raw = await fs.readFile(filePath, "utf8");
   const parsed = JSON.parse(raw);
-  const arr = Array.isArray(parsed) ? parsed : parsed.missions || [];
+  const arr = Array.isArray(parsed) ? parsed : parsed.quests || [];
   const unique = new Map();
   for (const m of arr)
-    if (isValidMission(m) && !unique.has(m.mission_id))
-      unique.set(m.mission_id, m);
-  MISSIONS = Array.from(unique.values());
-  if (MISSIONS.length === 0) throw new Error("No valid missions found.");
-  console.log(`Loaded ${MISSIONS.length} missions.`);
+    if (isValidquest(m) && !unique.has(m.quest_id)) unique.set(m.quest_id, m);
+  questS = Array.from(unique.values());
+  if (questS.length === 0) throw new Error("No valid quests found.");
+  console.log(`Loaded ${questS.length} quests.`);
 }
 
 // boot-time load
-loadMissions().catch((err) => {
-  console.error("Mission load failed:", err);
+loadquests().catch((err) => {
+  console.error("quest load failed:", err);
   process.exit(1);
 });
 
@@ -104,7 +108,7 @@ function getPlayer(uid) {
     players.set(uid, {
       score: 0,
       mode: "stealth",
-      finishedMissions: [],
+      finishedquests: [],
       currentArtWorkId: "",
     });
   return players.get(uid);
@@ -294,11 +298,11 @@ bot.on("message", async (msg) => {
   if (msg.text == "change mod") {
     sendModeChoice(msg.chat.id);
   }
-  if (msg.text == "random mission") {
-    sendMission(msg.chat.id, msg.from.id);
+  if (msg.text == "random quest") {
+    sendquest(msg.chat.id, msg.from.id);
   }
   if (msg.text == "send me on a random side quest") {
-    sendMission(msg.chat.id, msg.from.id);
+    sendquest(msg.chat.id, msg.from.id);
   }
   if (
     msg.text == "send me on a side quest for a specific work" ||
@@ -307,16 +311,62 @@ bot.on("message", async (msg) => {
     giveArtWorkChoice(msg.chat.id);
   }
   if (takeMeToAnotherQuestResponses.includes(msg.text)) {
-    sendMissionChoice(msg.chat.id);
+    sendquestChoice(msg.chat.id);
   }
   if (msg.text == "I am done") {
-    finishMission(msg.chat.id);
+    finishquest(msg.chat.id);
   }
   if (failResponses.includes(msg.text)) {
     failed(msg);
   }
   if (successResponses.includes(msg.text)) {
     win(msg);
+  }
+
+  if (
+    msg.text != null &&
+    msg.text.trim().toLowerCase() === "generate collage"
+  ) {
+    const bucket = collageBuckets.get(msg.chat.id) || [];
+    if (bucket.length < 2) {
+      bot.sendMessage(msg.chat.id, "Send me at least 2 photos first.");
+      return;
+    }
+
+    // You can tweak these to taste or randomize sizes
+    const options = {
+      iterations: 100,
+      patchWidth: 70,
+      patchHeight: 70,
+      // seed: 12345, // uncomment to make it deterministic per user
+    };
+
+    try {
+      bot.sendChatAction(msg.chat.id, "upload_photo");
+      const pngBuffer = await collageImages(bucket, options);
+
+      // Option A: send directly as a photo
+      await bot.sendPhoto(msg.chat.id, pngBuffer, {
+        caption: `collage: ${options.iterations} swaps of ${options.patchWidth}×${options.patchHeight} patches`,
+        filename: "collage.png",
+        contentType: "image/png",
+      });
+
+      // Option B (optional): upload to Cloudinary and share a URL
+      // const url = await new Promise((resolve, reject) => {
+      //   cloudinary.uploader.upload_stream(
+      //     { folder: "aawkwaa/collages", resource_type: "image" },
+      //     (err, res) => (err ? reject(err) : resolve(res.secure_url))
+      //   ).end(pngBuffer);
+      // });
+      // await bot.sendMessage(chatId, `Uploaded: ${url}`);
+
+      // Clear bucket so each run is fresh (or keep it if you want iterative collages)
+      collageBuckets.set(msg.chat.id, []);
+    } catch (e) {
+      console.error(e);
+      bot.sendMessage(msg.chat.id, "Collage failed. Try different images?");
+    }
   }
 });
 
@@ -343,7 +393,7 @@ function sendModeChoice(id) {
 function getUniqueArtworks() {
   const seen = new Set();
   const out = [];
-  for (const m of MISSIONS) {
+  for (const m of questS) {
     if (
       !seen.has(m.artwork_id) &&
       m.artwork_id &&
@@ -358,7 +408,7 @@ function getUniqueArtworks() {
   return out;
 }
 
-function sendMissionChoice(chatId) {
+function sendquestChoice(chatId) {
   const opts = {
     reply_markup: JSON.stringify({
       one_time_keyboard: true,
@@ -371,9 +421,9 @@ function sendMissionChoice(chatId) {
   bot.sendMessage(chatId, "lets play!!!", opts);
 }
 
-function sendMission(chatId, uid = chatId) {
+function sendquest(chatId, uid = chatId) {
   const player = getPlayer(uid);
-  const { mode, finishedMissions, currentArtWorkId } = player;
+  const { mode, finishedquests, currentArtWorkId } = player;
 
   // choose pool
   let pool = currentArtWorkId
@@ -382,16 +432,16 @@ function sendMission(chatId, uid = chatId) {
 
   // case: artwork chosen but empty
   if (currentArtWorkId && pool.length === 0) {
-    const anyRemainingThisArtworkAnyMode = MISSIONS.some(
+    const anyRemainingThisArtworkAnyMode = questS.some(
       (m) =>
         m.artwork_id === currentArtWorkId &&
-        !finishedMissions.includes(m.mission_id)
+        !finishedquests.includes(m.quest_id)
     );
     const opts = {
       reply_markup: JSON.stringify({
         one_time_keyboard: true,
         keyboard: [
-          ["random mission"],
+          ["random quest"],
           ["change artwork"],
           ...(anyRemainingThisArtworkAnyMode ? [["change mod"]] : []),
         ],
@@ -399,7 +449,7 @@ function sendMission(chatId, uid = chatId) {
     };
     bot.sendMessage(
       chatId,
-      `no more ${PLAYMODE_LABELS[mode]} missions for this artwork. wanna switch artwork or get a random mission?`,
+      `no more ${PLAYMODE_LABELS[mode]} quests for this artwork. wanna switch artwork or get a random quest?`,
       opts
     );
     return;
@@ -407,32 +457,41 @@ function sendMission(chatId, uid = chatId) {
 
   // case: no artwork chosen and empty in this mode
   if (!currentArtWorkId && pool.length === 0) {
-    const anyOtherModes = MISSIONS.some(
-      (m) => !finishedMissions.includes(m.mission_id) && m.playmode !== mode
+    const anyOtherModes = questS.some(
+      (m) => !finishedquests.includes(m.quest_id) && m.playmode !== mode
     );
     const opts = {
       reply_markup: JSON.stringify({
         one_time_keyboard: true,
         keyboard: anyOtherModes
-          ? [["🎛️ Change mode"], ["🔀 Random mission"]]
+          ? [["🎛️ change mod"], ["🔀 random quest"]]
           : [["🔁 Reset progress"]],
       }),
     };
     bot.sendMessage(
       chatId,
-      `you’ve completed all ${PLAYMODE_LABELS[mode]} missions. switch mode or take a random mission?`,
+      `you’ve completed all ${PLAYMODE_LABELS[mode]} quests. switch mode or take a random quest?`,
       opts
     );
     return;
   }
 
-  // send one mission
-  const mission = pickRandom(pool);
+  // send one quest
+  const quest = pickRandom(pool);
 
-  bot.sendMessage(chatId, mission.mission_prompt);
+  bot
+    .sendMessage(
+      chatId,
+      `locked on: *${prettyArtworkLabel(
+        quest.artwork_id
+      )}* — sending you a quest…`
+    )
+    .then(function () {
+      bot.sendMessage(chatId, quest.quest_prompt);
+    });
 
-  // remember current mission if useful
-  player.currentMissionId = mission.mission_id;
+  // remember current quest if useful
+  player.currentquestId = quest.quest_id;
 
   // follow-up
   const opts = {
@@ -450,7 +509,7 @@ function sendMission(chatId, uid = chatId) {
   }, 8000);
 }
 
-function finishMission(id) {
+function finishquest(id) {
   bot
     .sendPhoto(
       id,
@@ -483,17 +542,17 @@ function finishMission(id) {
 function win(msg) {
   const uid = msg.from.id;
   const chatId = msg.chat.id;
-  const p = getPlayer(uid);
+  let p = getPlayer(uid);
 
-  const missionId = p.currentMissionId; // set by sendMission()
-  recordCompletion(p, missionId);
+  const questId = p.currentquestId; // set by sendquest()
+  recordCompletion(p, questId);
   addScore(uid); // uses your DIFF_MULT
 
   p = getPlayer(uid);
 
-  const mission = getMissionById(missionId);
+  const quest = getquestById(questId);
   const award =
-    mission?.award_text_on_complete ||
+    quest?.award_text_on_complete ||
     success_answers[Math.floor(Math.random() * success_answers.length)];
 
   bot
@@ -574,12 +633,12 @@ function failed(msg) {
   const chatId = msg.chat.id;
   const p = getPlayer(uid);
 
-  const missionId = p.currentMissionId;
-  recordCompletion(p, missionId); // record even on fail (your request)
+  const questId = p.currentquestId;
+  recordCompletion(p, questId); // record even on fail (your request)
 
-  const mission = getMissionById(missionId);
+  const quest = getquestById(questId);
   const failLine =
-    mission?.fail_text_on_fail ||
+    quest?.fail_text_on_fail ||
     fail_answers[Math.floor(Math.random() * fail_answers.length)];
 
   bot.sendMessage(chatId, failLine);
@@ -617,7 +676,7 @@ function giveArtWorkChoice(chatId) {
   if (artworks.length === 0) {
     bot.sendMessage(
       chatId,
-      "hmm, i can’t see any artworks yet. add some to missions.json?"
+      "hmm, i can’t see any artworks yet. add some to quests.json?"
     );
     return;
   }
@@ -660,7 +719,7 @@ bot.on("callback_query", (q) => {
       }
     );
 
-    sendMissionChoice(chatId);
+    sendquestChoice(chatId);
     return;
   }
   if (q.data.startsWith("aw:")) {
@@ -678,8 +737,8 @@ bot.on("callback_query", (q) => {
     // edit the chooser message for feedback (optional)
     bot.editMessageText(
       artId
-        ? `locked on: *${prettyArtworkLabel(artId)}* — sending you a mission…`
-        : `no artwork lock — sending a random mission in your mode…`,
+        ? `locked on: *${prettyArtworkLabel(artId)}* — sending you a quest…`
+        : `no artwork lock — sending a random quest in your mode…`,
       {
         chat_id: chatId,
         message_id: q.message.message_id,
@@ -687,13 +746,54 @@ bot.on("callback_query", (q) => {
       }
     );
 
-    // immediately send a mission respecting mode + artwork
-    sendMission(chatId, uid);
+    // immediately send a quest respecting mode + artwork
+    sendquest(chatId, uid);
     return;
   }
 });
 
-bot.onText(/\/quest/, (msg) => sendMissionChoice(msg.chat.id));
+async function fetchTelegramFileAsBuffer(fileId) {
+  const link = await bot.getFileLink(fileId);
+  const resp = await axios.get(link, { responseType: "arraybuffer" });
+  return Buffer.from(resp.data);
+}
+
+// When users send photos, keep the highest-res variant
+bot.on("photo", async (msg) => {
+  const chatId = msg.chat.id;
+  try {
+    const variants = msg.photo || [];
+    const biggest = variants[variants.length - 1];
+    if (!biggest || !biggest.file_id) return;
+
+    const buf = await fetchTelegramFileAsBuffer(biggest.file_id);
+    if (!collageBuckets.has(chatId)) collageBuckets.set(chatId, []);
+    collageBuckets.get(chatId).push(buf);
+
+    let imageAmount = collageBuckets.get(chatId).length;
+
+    if (imageAmount > 2) {
+      const opts = {
+        reply_markup: JSON.stringify({
+          one_time_keyboard: true,
+
+          keyboard: [["generate collage"]],
+        }),
+      };
+      bot.sendMessage(
+        chatId,
+        `these are great images! send me more or generate the collage now`
+      );
+    } else {
+      bot.sendMessage(chatId, `i need more images to make the collage with`);
+    }
+  } catch (e) {
+    console.error(e);
+    bot.sendMessage(chatId, "Couldn't read that photo, sorry :(");
+  }
+});
+
+bot.onText(/\/quest/, (msg) => sendquestChoice(msg.chat.id));
 // bot.onText(/\/artworkquest/, (msg) => giveArtWorkChoice(msg.chat.id));
 bot.onText(/\/mode/, (msg) => {
   sendModeChoice(msg.chat.id);
@@ -749,29 +849,29 @@ function chunk(arr, size = 2) {
   return rows;
 }
 function ensureCompletedArray(p) {
-  if (!Array.isArray(p.completedMissions)) {
-    // migrate from legacy finishedMissions if present
-    p.completedMissions = Array.isArray(p.finishedMissions)
-      ? [...p.finishedMissions]
+  if (!Array.isArray(p.completedquests)) {
+    // migrate from legacy finishedquests if present
+    p.completedquests = Array.isArray(p.finishedquests)
+      ? [...p.finishedquests]
       : [];
   }
   // keep legacy prop in sync so existing filters still work
-  p.finishedMissions = p.completedMissions;
+  p.finishedquests = p.completedquests;
 }
 
-function recordCompletion(p, missionId) {
-  if (!missionId) return false;
+function recordCompletion(p, questId) {
+  if (!questId) return false;
   ensureCompletedArray(p);
-  if (!p.completedMissions.includes(missionId)) {
-    p.completedMissions.push(missionId);
-    p.finishedMissions = p.completedMissions; // keep synced
+  if (!p.completedquests.includes(questId)) {
+    p.completedquests.push(questId);
+    p.finishedquests = p.completedquests; // keep synced
     return true;
   }
   return false;
 }
 
-function getMissionById(missionId) {
-  return MISSIONS?.find?.((m) => m.mission_id === missionId);
+function getquestById(questId) {
+  return questS?.find?.((m) => m.quest_id === questId);
 }
 
 function pickRandom(arr) {
@@ -779,20 +879,19 @@ function pickRandom(arr) {
 }
 
 function poolForPlayer(player) {
-  return MISSIONS.filter(
+  return questS.filter(
     (m) =>
-      m.playmode === player.mode &&
-      !player.finishedMissions.includes(m.mission_id)
+      m.playmode === player.mode && !player.finishedquests.includes(m.quest_id)
   );
 }
 
 function poolForPlayerArtwork(player) {
   if (!player.currentArtWorkId) return [];
-  return MISSIONS.filter(
+  return questS.filter(
     (m) =>
       m.playmode === player.mode &&
       m.artwork_id === player.currentArtWorkId &&
-      !player.finishedMissions.includes(m.mission_id)
+      !player.finishedquests.includes(m.quest_id)
   );
 }
 
@@ -834,7 +933,7 @@ function act(uid, action = "start", payload = {}) {
         ],
         [
           choice("choose mode", "mode"),
-          choice("get a quest", "missionChoice"),
+          choice("get a quest", "questChoice"),
           choice("help", "help"),
         ],
         { score: p.score, mode: p.mode }
@@ -865,18 +964,18 @@ function act(uid, action = "start", payload = {}) {
           }`,
         ],
         [
-          choice("get a quest", "missionChoice"),
+          choice("get a quest", "questChoice"),
           choice("change artwork", "artworkPicker"),
         ],
         { score: pp.score, mode: pp.mode }
       );
     }
 
-    case "missionChoice":
+    case "questChoice":
       return ui(
         ["lets play!!!"],
         [
-          choice("send me on a random side quest", "mission"),
+          choice("send me on a random side quest", "quest"),
           choice(
             "send me on a side quest for a specific work",
             "artworkPicker"
@@ -903,22 +1002,22 @@ function act(uid, action = "start", payload = {}) {
     case "setArtwork": {
       const id = payload.id ?? ANY;
       p.currentArtWorkId = id;
-      return act(uid, "mission"); // immediately give a mission
+      return act(uid, "quest"); // immediately give a quest
     }
 
-    case "mission": {
+    case "quest": {
       const pool = p.currentArtWorkId
         ? poolForPlayerArtwork(p)
         : poolForPlayer(p);
 
       if (p.currentArtWorkId && pool.length === 0) {
-        const anyRemainingThisArtworkAnyMode = MISSIONS.some(
+        const anyRemainingThisArtworkAnyMode = questS.some(
           (m) =>
             m.artwork_id === p.currentArtWorkId &&
-            !p.finishedMissions.includes(m.mission_id)
+            !p.finishedquests.includes(m.quest_id)
         );
         const choices = [
-          choice("random mission", "mission"),
+          choice("random quest", "quest"),
           choice("change artwork", "artworkPicker"),
         ];
         if (anyRemainingThisArtworkAnyMode)
@@ -927,44 +1026,43 @@ function act(uid, action = "start", payload = {}) {
           [
             `no more ${
               PLAYMODE_LABELS[p.mode]
-            } missions for this artwork. wanna switch artwork or get a random mission?`,
+            } quests for this artwork. wanna switch artwork or get a random quest?`,
           ],
           choices
         );
       }
 
       if (!p.currentArtWorkId && pool.length === 0) {
-        const anyOtherModes = MISSIONS.some(
-          (m) =>
-            !p.finishedMissions.includes(m.mission_id) && m.playmode !== p.mode
+        const anyOtherModes = questS.some(
+          (m) => !p.finishedquests.includes(m.quest_id) && m.playmode !== p.mode
         );
         return ui(
           [
             `you’ve completed all ${
               PLAYMODE_LABELS[p.mode]
-            } missions. switch mode or take a random mission?`,
+            } quests. switch mode or take a random quest?`,
           ],
           anyOtherModes
             ? [
                 choice("🎛️ Change mode", "mode"),
-                choice("🔀 Random mission", "mission"),
+                choice("🔀 Random quest", "quest"),
               ]
             : [choice("🔁 Reset progress", "reset")]
         );
       }
 
-      const mission = pickRandom(pool);
-      p.currentMissionId = mission.mission_id;
+      const quest = pickRandom(pool);
+      p.currentquestId = quest.quest_id;
 
       return ui(
         [
-          mission.mission_prompt,
+          quest.quest_prompt,
           "Let me know when you are done -- but like, take your time. I am not going anywhere",
         ],
         [choice("I am done", "done")],
         {
-          missionId: mission.mission_id,
-          artwork: mission.artwork_id,
+          questId: quest.quest_id,
+          artwork: quest.artwork_id,
           mode: p.mode,
         }
       );
@@ -980,14 +1078,14 @@ function act(uid, action = "start", payload = {}) {
       );
 
     case "succeed": {
-      const mission = getMissionById(p.currentMissionId);
-      recordCompletion(p, p.currentMissionId);
+      const quest = getquestById(p.currentquestId);
+      recordCompletion(p, p.currentquestId);
       addScore(uid);
       const award =
-        mission?.award_text_on_complete ||
+        quest?.award_text_on_complete ||
         success_answers[Math.floor(Math.random() * success_answers.length)];
       const continueChoices = [
-        choice(L(takeMeToAnotherQuestResponses), "missionChoice"),
+        choice(L(takeMeToAnotherQuestResponses), "questChoice"),
         choice(L(noStopTheGameResponses), "bar"),
       ];
       return ui(
@@ -1001,15 +1099,15 @@ function act(uid, action = "start", payload = {}) {
     }
 
     case "fail": {
-      const mission = getMissionById(p.currentMissionId);
-      recordCompletion(p, p.currentMissionId);
+      const quest = getquestById(p.currentquestId);
+      recordCompletion(p, p.currentquestId);
       const failLine =
-        mission?.fail_text_on_fail ||
+        quest?.fail_text_on_fail ||
         fail_answers[Math.floor(Math.random() * fail_answers.length)];
       return ui(
         [failLine, "¯_(ツ)_/¯ u could always try again?"],
         [
-          choice(L(takeMeToAnotherQuestResponses), "missionChoice"),
+          choice(L(takeMeToAnotherQuestResponses), "questChoice"),
           choice(L(noStopTheGameResponses), "bar"),
         ]
       );
@@ -1032,18 +1130,18 @@ function act(uid, action = "start", payload = {}) {
           "if you succeed enough, you can even win prizes.",
         ],
         [
-          choice("get a quest", "missionChoice"),
+          choice("get a quest", "questChoice"),
           choice("take me into the simulation", "enter"),
         ]
       );
 
     case "reset": {
-      p.finishedMissions = [];
-      p.completedMissions = [];
+      p.finishedquests = [];
+      p.completedquests = [];
       p.currentArtWorkId = ANY;
       return ui(
         ["progress reset."],
-        [choice("random mission", "mission"), choice("choose mode", "mode")]
+        [choice("random quest", "quest"), choice("choose mode", "mode")]
       );
     }
 
