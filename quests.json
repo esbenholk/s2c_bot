@@ -72,7 +72,7 @@
     "fail_text_on_fail": "dont worry babe, I love you"
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--stealth--artwork--heart-array-breath",
     "playmode": "stealth",
     "quest_prompt": "HEART ARRAY BREATH: slide in front of “Self Portrait – i love posing for you.” Count the avatars around the heart with your eyes—not numbers, just pulses. Inhale on a soft face, exhale on a hard one. Let the grey tones wash you. Hold one avatar in mind and let it look back.",
@@ -80,7 +80,7 @@
     "fail_text_on_fail": "no sync yet? downsample to a single face and try one breath-loop."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--stealth--absurd--hud-stance-meter",
     "playmode": "stealth",
     "quest_prompt": "HUD CHECK: imagine a tiny meter above the drawing that reads “Stance: ♥/⚔.” Watch it flicker as you scan the heart. Nod once where it flips from tenderness to threat.",
@@ -88,7 +88,7 @@
     "fail_text_on_fail": "HUD shy? blink to refresh, scan half the heart only."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--stealth--curator--pose-intent",
     "playmode": "stealth",
     "quest_prompt": "CURATORIAL TAG: pick one word that fits how it’s placed here—“confession,” “armor,” “party,” or your own. Does the hang make it softer or sharper? Keep the word; discard the others.",
@@ -96,7 +96,7 @@
     "fail_text_on_fail": "no word fits? call it “both/and” and carry on."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--social--artwork--co-aim",
     "playmode": "social",
     "quest_prompt": "CO-AIM: invite a passerby—“pick one avatar in the heart with me.” Each share one word for hers: “soft,” “ready,” “tired,” “aggro,” etc. Trade and look again.",
@@ -104,7 +104,7 @@
     "fail_text_on_fail": "solo mode: choose two avatars yourself and trade words between them."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--social--absurd--npc-loadout",
     "playmode": "social",
     "quest_prompt": "LOADOUT CHAT: ask someone quietly, “if these were our RPG mains, what’s your starter perk?” Trade one imaginary stat each (e.g., ‘Heart Radius +2’, ‘Calm DPS’).",
@@ -112,7 +112,7 @@
     "fail_text_on_fail": "no trade? whisper your own stat to the heart and grin."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--social--curator--why-heart",
     "playmode": "social",
     "quest_prompt": "WHY HEART?: ask a neighbor for a one-sentence theory: why a heart shape for these avatars? Offer your one-line counter-theory back.",
@@ -120,7 +120,7 @@
     "fail_text_on_fail": "no neighbor? gift yourself two tiny theories and pocket them."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--improvisational--artwork--idle-stance-swap",
     "playmode": "improvisational",
     "quest_prompt": "STANCE SWAP: mirror two poses from the heart in micro—one gentle, one battle-ready. Hold each for two breaths, then combine them into a tiny hybrid stance. Bow to the drawing.",
@@ -128,7 +128,7 @@
     "fail_text_on_fail": "crowded? do it thumb-sized: open palm = soft, curled fist = hard."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--improvisational--absurd--achievement-heart-link",
     "playmode": "improvisational",
     "quest_prompt": "ACHIEVEMENT CALL: softly declare once, “Saving progress… Link established: Heart Party.” Tiny thumbs-up to the avatars, like you joined the squad.",
@@ -136,7 +136,7 @@
     "fail_text_on_fail": "voice shy? mouth the words silently; thumbs-up still counts."
   },
   {
-    "artwork_id": "self-portrait-i-love-posing-for-you",
+    "artwork_id": "self-portrait/i-love-posing-for-you",
     "quest_id": "anna-vigdis-gunnarsdottir--improvisational--curator--ten-second-tour",
     "playmode": "improvisational",
     "quest_prompt": "MICRO-TOUR: give a 10–12s guide to the air: “autobiography meets avatar—soft graphite, hard potential.” Trace a tiny heart in the air, open-palm to finish.",
@@ -145,7 +145,7 @@
   },
 
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--stealth--artwork--soft-dps-scan",
     "playmode": "stealth",
     "quest_prompt": "SOFT DPS: Stand by the steel shelves. Pick one clay weapon with your eyes only. Imagine its damage number melting to zero as the clay stays tender. Inhale ‘blade,’ exhale ‘love.’",
@@ -153,7 +153,7 @@
     "fail_text_on_fail": "Numbers won’t melt? Downsample: repeat on the tiniest edge of the blade."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--stealth--absurd--fragility-meter",
     "playmode": "stealth",
     "quest_prompt": "HUD CHECK: Imagine a floating bar above the shelf: “Fragility %.” Let it rise whenever you notice fingerprints, seams, or slumps. Nod once when it hits 99.",
@@ -161,7 +161,7 @@
     "fail_text_on_fail": "HUD shy? Blink to refresh and scan only one shelf."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--stealth--curator--steel-vs-clay",
     "playmode": "stealth",
     "quest_prompt": "CURATORIAL TAG: Without moving, test this phrase in your head: “steel says display, clay says body.” Keep it if it fits. If not, invent your own two-word tag.",
@@ -169,7 +169,7 @@
     "fail_text_on_fail": "No fit? Label it ‘both/and’ and proceed."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--social--artwork--choose-your-weapon",
     "playmode": "social",
     "quest_prompt": "CO-LOADOUT: Quietly invite a passerby—“choose your weapon… for love.” Each of you point with eyes only to one clay piece and say one word power it grants (e.g., ‘gentleness,’ ‘patience’).",
@@ -177,7 +177,7 @@
     "fail_text_on_fail": "No partner? Pick two pieces yourself and trade powers between them."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--social--absurd--nerf-patch-notes",
     "playmode": "social",
     "quest_prompt": "PATCH NOTES: Ask someone, deadpan: “Did you read the latest nerf? Clay blades now do +100 tenderness.” Share one more fake patch each, then smile.",
@@ -185,7 +185,7 @@
     "fail_text_on_fail": "If they pass, whisper your own patch note to the shelf."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--social--curator--floor-logic",
     "playmode": "social",
     "quest_prompt": "WHY THE FLOOR?: Ask a neighbor for a one-line theory about why the weapons live low on steel pedestals. Offer your counter-theory back.",
@@ -193,7 +193,7 @@
     "fail_text_on_fail": "No neighbor? Gift yourself two tiny theories and pocket them."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--improvisational--artwork--no-touch-parry",
     "playmode": "improvisational",
     "quest_prompt": "NO-TOUCH PARRY: Face a shelf and mime a ultra-gentle parry in the air—two small wrist arcs, then an open-palm truce. Keep distance; treat air like porcelain.",
@@ -201,7 +201,7 @@
     "fail_text_on_fail": "Crowded? Do thumb-sized arcs near your chest."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--improvisational--absurd--save-slot-love-build",
     "playmode": "improvisational",
     "quest_prompt": "ACHIEVEMENT CALL: Softly declare once, “Saving progress… Love build equipped.” Tiny thumbs-up toward the rack, then stillness.",
@@ -209,7 +209,7 @@
     "fail_text_on_fail": "Voice shy? Mouth the words silently; thumbs-up still counts."
   },
   {
-    "artwork_id": "blades-of-love-i-love-you",
+    "artwork_id": "blades-of-love/i-love-you",
     "quest_id": "anna-vigdis-gunnarsdottir--improvisational--curator--ten-second-tour",
     "playmode": "improvisational",
     "quest_prompt": "MICRO-TOUR: Give a 10–12s guide to the air: “game weapons respawned in unfired clay—hard forms, soft matter.” Gesture once, open palm, no pointing close.",
@@ -433,7 +433,7 @@
     "fail_text_on_fail": "Voice shy? Think the word, draw the ✓ at hip level, and nod once."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--stealth--artwork--charm-attune",
     "playmode": "stealth",
     "quest_prompt": "CHARM ATTUNE: Face the soft-pink charm. Inhale “butterfly,” exhale “heart.” Three breath loops. Imagine a tiny ward forming between you and the room—no touching, just noticing.",
@@ -441,7 +441,7 @@
     "fail_text_on_fail": "Ward won’t render? Downsample to one breath and a blink."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--stealth--absurd--rune-hud",
     "playmode": "stealth",
     "quest_prompt": "HUD CHECK: Picture a floating readout above the charm: “Protection %.” Let it rise a notch each time your eyes pass butterfly → heart. Nod once when it hits 88.",
@@ -449,7 +449,7 @@
     "fail_text_on_fail": "No readout? Blink to refresh UI and scan only the top half."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--stealth--curator--hang-spell",
     "playmode": "stealth",
     "quest_prompt": "CURATOR TAG: Try a two-word tag for how it hangs here: “soft armor,” “tender rune,” or your own. Keep the one your body agrees with.",
@@ -457,7 +457,7 @@
     "fail_text_on_fail": "None fit? Tag it “both/and” and proceed."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--social--artwork--co-ward",
     "playmode": "social",
     "quest_prompt": "CO-WARD: Invite a passerby—“share a 5-second protection with me?” Stand side by side, look at the charm, each whisper one quiet word you’d like it to protect.",
@@ -465,7 +465,7 @@
     "fail_text_on_fail": "No partner? Whisper your one word solo and gift a nod."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--social--absurd--amulet-patch-notes",
     "playmode": "social",
     "quest_prompt": "PATCH NOTES: Ask someone, deadpan: “Did the amulet patch roll out? +2 kindness, +1 butterfly luck.” Trade one more fake note each, then smile.",
@@ -473,7 +473,7 @@
     "fail_text_on_fail": "They pass? Whisper your patch note to the air and grin."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--social--curator--why-soft-pink",
     "playmode": "social",
     "quest_prompt": "WHY SOFT PINK?: Ask a neighbor for a one-line theory about the color logic (care vs. power). Offer your one-line counter-theory back.",
@@ -481,7 +481,7 @@
     "fail_text_on_fail": "No neighbor? Gift yourself two tiny theories and pocket them."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--improvisational--artwork--micro-sigil",
     "playmode": "improvisational",
     "quest_prompt": "MICRO-SIGIL: Without touching anything, draw a tiny sigil in the air at hip level—one slow curve for butterfly, one dot for heart. Seal with a breath. Done.",
@@ -489,7 +489,7 @@
     "fail_text_on_fail": "Crowded? Trace it with just your thumb against your palm."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--improvisational--absurd--save-slot-charm",
     "playmode": "improvisational",
     "quest_prompt": "ACHIEVEMENT CALL: Softly declare once, “Saving progress… Protective charm equipped.” Tiny thumbs-up toward the wall, then stillness.",
@@ -497,7 +497,7 @@
     "fail_text_on_fail": "Voice shy? Mouth the words; the thumbs-up still counts."
   },
   {
-    "artwork_id": "artifact-protective-charm-butterfly-heart-soft-pink",
+    "artwork_id": "artifact-protective-charm",
     "quest_id": "sofie-burgaard--improvisational--curator--curator-patch",
     "playmode": "improvisational",
     "quest_prompt": "CURATOR PATCH: Face the charm and say once: “Applying patch: protection.” Draw a tiny ✓ in the air (away from the work). Whisper “compiled,” then hush.",
@@ -505,7 +505,7 @@
     "fail_text_on_fail": "Voice shy? Think the word, draw the ✓ near your hip, nod once."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--stealth--artwork--wasd-breath",
     "playmode": "stealth",
     "quest_prompt": "WASD BREATH: Stand where you can see at least two screens. Inhale=W, exhale=S; tiny left/right eye-shifts=A/D. Four breath-moves total. Feel the flat room tilt into XYZ.",
@@ -513,7 +513,7 @@
     "fail_text_on_fail": "Axis noisy? Do W then S only—two breaths, done."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--stealth--absurd--uv-scan",
     "playmode": "stealth",
     "quest_prompt": "UV SCAN: Imagine each screen is a flattened UV map of the room. Pick one corner seam in your mind and ‘unfold’ it quietly until it becomes space again.",
@@ -521,7 +521,7 @@
     "fail_text_on_fail": "Seam won’t open? Blink to refresh and unfold a smaller edge."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--stealth--curator--grid-to-cosm-tag",
     "playmode": "stealth",
     "quest_prompt": "CURATOR TAG: Try a two-word tag for the install: “artboard→engine,” “grid→cosm,” or your own. Keep the one your body agrees with while looking between screens.",
@@ -529,7 +529,7 @@
     "fail_text_on_fail": "None fit? Tag it “both/and” and proceed."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--social--artwork--corner-party",
     "playmode": "social",
     "quest_prompt": "CORNER PARTY: Invite a passerby to each pick a different screen/corner. On a count of three, both point (with eyes only) to the same creature you ‘feel’ is in the middle. Compare choices.",
@@ -537,7 +537,7 @@
     "fail_text_on_fail": "No partner? Pick two corners yourself and compare silently."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--social--absurd--designer-or-player",
     "playmode": "social",
     "quest_prompt": "ROLE QUERY: Ask someone softly, “Are you the designer or the player in here?” Trade one imaginary perk each (e.g., ‘Foliage Whisper +1’, ‘Type Grid Sense +2’).",
@@ -545,7 +545,7 @@
     "fail_text_on_fail": "They pass? Whisper your own perk to the nearest screen and grin."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--social--curator--why-three-screens",
     "playmode": "social",
     "quest_prompt": "WHY THREE?: Ask a neighbor for a one-line theory on why the video lives on three dispersed screens. Offer your counter-theory back in one line.",
@@ -553,7 +553,7 @@
     "fail_text_on_fail": "No neighbor? Gift yourself two tiny theories and pocket them."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--improvisational--artwork--micro-wasd-walk",
     "playmode": "improvisational",
     "quest_prompt": "MICRO WASD WALK: Without blocking anyone, take four micro-steps—forward, back, left, right—turning your head toward a different screen each step. End with a tiny nod to the room.",
@@ -561,7 +561,7 @@
     "fail_text_on_fail": "Crowded? Do it as foot-shifts in place, head turns only."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--improvisational--absurd--save-slot-cosm",
     "playmode": "improvisational",
     "quest_prompt": "ACHIEVEMENT CALL: Softly declare once, “Saving progress… Cosm entered.” Tiny thumbs-up to any screen; one take only.",
@@ -569,7 +569,7 @@
     "fail_text_on_fail": "Voice shy? Mouth the words; thumbs-up still counts."
   },
   {
-    "artwork_id": "haniver-collective--memory-microcosm",
+    "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--improvisational--curator--placement-ping",
     "playmode": "improvisational",
     "quest_prompt": "PLACEMENT PING: Point a small open palm toward each screen in sequence (far → nearer → far). Whisper one word per ping: “air… foliage… inhabitants.” Done.",

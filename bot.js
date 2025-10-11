@@ -687,7 +687,7 @@ function giveArtWorkChoice(chatId) {
   }));
 
   // add a "random/any" option
-  buttons.unshift({ text: "🔀 Any artwork", callback_data: "aw:" });
+  buttons.push({ text: "🔀 Any artwork", callback_data: "aw:" });
 
   const inline_keyboard = chunk(buttons, 2).map((row) =>
     row.map((b) => ({ text: b.text, callback_data: b.callback_data }))
