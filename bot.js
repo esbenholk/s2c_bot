@@ -67,6 +67,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Global cache for structured quests
 let questS = [];
+const videoCache = new Map(); // key: artwork_id -> { fileId, uniqueId }
 
 // Per-chat scratch space to stash incoming photos
 const collageBuckets = new Map(); // chatId -> Buffer[]
@@ -121,9 +122,9 @@ function setMode(uid, mode) {
 }
 
 const PLAYMODE_LABELS = {
-  stealth: "̤̤̈:̤̤̤̈̈̈s̤̤̈:̤̤̤̤̈̈:̤̤̤̈̈̈ẗ̤̤:̤̤̤̤̈̈:̤̤̤̈̈̈ë̤̤:̤̤̤̤̈̈:̤̤̤̈̈̈ä̤̤:̤̤̤̤̈̈:̤̤̤̈̈̈l̤̤̈:̤̤̤̤̈̈:̤̤̤̈̈̈ẗ̤̤:̤̤̤̤̈̈:̤̤̤̈̈̈ḧ̤̤:̤̤̈",
-  social: "💲💣©️📍🅰️L",
-  improvisational: "͐͋ɨ͎̗͋͐ʍ̗͎ρя๏˅͐͋ɨ͋͐$͛ą͛ţ͐͋ɨ͋͐๏ñ͛ą͛ℓ",
+  stealth: "̤̤̈stealth  *where your play wont be recognised",
+  social: "social *where you play with others",
+  improvisational: "͐͋ɨ͎̗͋͐ʍ̗͎ρя๏˅͐͋ɨ͋͐$͛ą͛ţ͐͋ɨ͋͐๏ñ͛ą͛ℓ *where you play in public",
 };
 
 function addScore(uid) {
@@ -373,7 +374,7 @@ bot.on("message", async (msg) => {
 function sendModeChoice(id) {
   bot.sendMessage(
     id,
-    "this experience can be served in different mods: plz choose playmode: ",
+    "this experience can be served in different mods (that means, you get to choose what kind of missions you embark on): plz choose playmode: ",
     {
       reply_markup: {
         inline_keyboard: [
@@ -421,7 +422,7 @@ function sendquestChoice(chatId) {
   bot.sendMessage(chatId, "lets play!!!", opts);
 }
 
-function sendquest(chatId, uid = chatId) {
+async function sendquest(chatId, uid = chatId) {
   const player = getPlayer(uid);
   const { mode, finishedquests, currentArtWorkId } = player;
 
@@ -479,13 +480,36 @@ function sendquest(chatId, uid = chatId) {
   // send one quest
   const quest = pickRandom(pool);
 
+  const cached = videoCache.get(quest.artwork_id);
+  let msg;
+
+  try {
+    if (cached?.fileId) {
+      // reuse Telegram's cached file
+      msg = await bot.sendVideo(chatId, cached.fileId);
+    } else {
+      // first time: send from web, then cache returned file_id
+      msg = await bot.sendVideo(chatId, quest.image_url);
+      if (msg.video?.file_id) {
+        videoCache.set(quest.artwork_id, {
+          fileId: msg.video.file_id,
+          uniqueId: msg.video.file_unique_id,
+        });
+      }
+    }
+  } catch (err) {
+    // if a cached file_id ever goes stale, fall back to URL and refresh the cache
+    msg = await bot.sendVideo(chatId, quest.image_url);
+    if (msg.video?.file_id) {
+      videoCache.set(quest.artwork_id, {
+        fileId: msg.video.file_id,
+        uniqueId: msg.video.file_unique_id,
+      });
+    }
+  }
+
   bot
-    .sendMessage(
-      chatId,
-      `locked on: *${prettyArtworkLabel(
-        quest.artwork_id
-      )}* — sending you a quest…`
-    )
+    .sendMessage(chatId, `arrive @: *${prettyArtworkLabel(quest.artwork_id)}*`)
     .then(function () {
       bot.sendMessage(chatId, quest.quest_prompt);
     });
@@ -511,11 +535,7 @@ function sendquest(chatId, uid = chatId) {
 
 function finishquest(id) {
   bot
-    .sendPhoto(
-      id,
-      "https://res.cloudinary.com/www-houseofkilling-com/image/upload/c_thumb,w_200,g_face/v1632228041/aawkwaa/goodjob_qfim9b.png",
-      { caption: "good job ༼ つ ◕_◕ ༽つ (⊙_⊙;)!" }
-    )
+    .sendMessage(id, "good job ༼ つ ◕_◕ ༽つ (⊙_⊙;)!")
     .then(function () {
       const opts = {
         reply_markup: JSON.stringify({
@@ -558,10 +578,10 @@ function win(msg) {
   bot
     .sendVideo(
       chatId,
-      "https://res.cloudinary.com/www-houseofkilling-com/video/upload/v1631365794/aawkwaa/embarressed_dfaxck.mp4"
+      "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380360/s2c/bot_main_mswase.gif"
     )
     .then(function () {
-      bot.sendMessage(chatId, award);
+      bot.sendMessage(chatId, award + " you have " + p.score + " aura points");
       bot.sendChatAction(chatId, "typing");
     })
     .then(function () {
@@ -594,6 +614,57 @@ function win(msg) {
       }
 
       if (p.score >= winAmount) {
+        bot
+          .sendMessage(
+            chatId,
+            "hej babe, have we been co-inhabiting this simulation together?"
+          )
+          .then(function () {
+            bot
+              .sendMessage(
+                chatId,
+                "You are so beautiful to me: top player with all the quests. The simulation bends to your will. Your speed run glitches the software. I welcome you to the edges of the simulacra. Clay turns to pixels. Code turns to system."
+              )
+              .then(function () {
+                bot
+                  .sendPhoto(
+                    chatId,
+                    "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760384377/s2c/Aktiv_1landscape_sx7ty6.png",
+                    { caption: "win token" }
+                  )
+                  .then(function () {
+                    const finishOpts = {
+                      reply_markup: JSON.stringify({
+                        one_time_keyboard: true,
+
+                        keyboard: [
+                          [
+                            takeMeToAnotherQuestResponses[
+                              Math.floor(
+                                Math.random() *
+                                  takeMeToAnotherQuestResponses.length
+                              )
+                            ],
+                          ],
+                          [
+                            noStopTheGameResponses[
+                              Math.floor(
+                                Math.random() * noStopTheGameResponses.length
+                              )
+                            ],
+                          ],
+                        ],
+                      }),
+                    };
+
+                    bot.sendMessage(
+                      chatId,
+                      "You can continue the game, or you can show this win token to context creators (S2C) at the bar and collect your prize.... sooooo should we still play?",
+                      finishOpts
+                    );
+                  });
+              });
+          });
       } else {
         setTimeout(followup, 4000); //wait 2 seconds
       }
@@ -601,7 +672,7 @@ function win(msg) {
     .catch();
 }
 
-function diveIntoTheSimulation() {
+function diveIntoTheSimulation(chatId) {
   const opts = {
     reply_markup: JSON.stringify({
       one_time_keyboard: true,
@@ -617,7 +688,7 @@ function diveIntoTheSimulation() {
       "Hej babe, are you also [coinhabiting synthetic worlds with machines] lately? Yearning for soft sympoesis and running on absurdity, the exhibition invites artists working across videogame engines, generative algorithmic systems and soft worldings to fabulate new unrealities. The main plot is leaking. Truth feels like a swamp– slippery, gloopy, always shifting underfoot. Step too close and it distorts, slurps you down. This simulation frolics between pixels and petals, between code and clay. The digital cracks open portals into alternate realities; the physical insists on weight, touch, presence. Joystick in one hand, flower in the other. Together, they compose side quests that aren’t detours or escapes, but necessary strategies for care and fabulation in viscous times, asking: Whose simulation is it anyway?"
     )
     .then(function () {
-      bot.sendChatAction(msg.chat.id, "typing");
+      bot.sendChatAction(chatId, "typing");
 
       bot.sendMessage(
         chatId,
