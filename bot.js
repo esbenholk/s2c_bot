@@ -974,12 +974,15 @@ function choice(label, action, payload) {
   return { label, action, payload };
 }
 
+// keep your existing ui() and choice() helpers above this
+
 function act(uid, action = "start", payload = {}) {
   const p = getPlayer(uid);
-  const ANY = ""; // artwork unlocked
+  const ANY = ""; // no artwork lock
   const L = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
   switch (action) {
+    // ---------------- ENTRY ----------------
     case "start":
       return ui(
         [
@@ -1010,10 +1013,11 @@ function act(uid, action = "start", payload = {}) {
         { score: p.score, mode: p.mode }
       );
 
+    // ---------------- MODES ----------------
     case "mode":
       return ui(
         [
-          "this experience can be served in different mods: plz choose playmode:",
+          "this experience can be served in different mods (that means, you get to choose what kind of missions you embark on): plz choose playmode:",
         ],
         [
           choice(PLAYMODE_LABELS.stealth, "setMode", { mode: "stealth" }),
@@ -1026,7 +1030,9 @@ function act(uid, action = "start", payload = {}) {
       );
 
     case "setMode": {
-      setMode(uid, payload.mode);
+      if (["stealth", "social", "improvisational"].includes(payload.mode)) {
+        setMode(uid, payload.mode);
+      }
       const pp = getPlayer(uid);
       return ui(
         [
@@ -1042,6 +1048,7 @@ function act(uid, action = "start", payload = {}) {
       );
     }
 
+    // --------------- QUEST FLOW ---------------
     case "questChoice":
       return ui(
         ["lets play!!!"],
@@ -1057,23 +1064,22 @@ function act(uid, action = "start", payload = {}) {
 
     case "artworkPicker": {
       const all = getUniqueArtworks();
-      const first = all.slice(0, 6); // keep it tight for the web UI; can paginate later
+      const first = all.slice(0, 8);
       const picks = [
-        choice("🔀 Any artwork", "setArtwork", { id: ANY }),
-        ...first.map((id) =>
-          choice(prettyArtworkLabel(id), "setArtwork", { id })
+        ...first.map(
+          (id) => choice(prettyArtworkLabel(id), "setArtwork", { id }),
+          choice("🔀 Any artwork", "setArtwork", { id: ANY })
         ),
       ];
       return ui(["wander to an artwork of your choosing:"], picks, {
-        pickCount: first.length,
-        total: all.length,
+        totalArtworks: all.length,
+        showing: first.length,
       });
     }
 
     case "setArtwork": {
-      const id = payload.id ?? ANY;
-      p.currentArtWorkId = id;
-      return act(uid, "quest"); // immediately give a quest
+      p.currentArtWorkId = payload?.id ?? ANY;
+      return act(uid, "quest");
     }
 
     case "quest": {
@@ -1122,24 +1128,35 @@ function act(uid, action = "start", payload = {}) {
         );
       }
 
-      const quest = pickRandom(pool);
-      p.currentquestId = quest.quest_id;
+      const q = pickRandom(pool);
+      p.currentquestId = q.quest_id;
+
+      // Send the artwork “video”/gif to the web UI too:
+      // Your Telegram path uses quest.image_url in sendVideo — we surface the same for web.
+      const events = q.image_url
+        ? [
+            {
+              type: "video",
+              url: q.image_url,
+              caption: prettyArtworkLabel(q.artwork_id),
+            },
+          ]
+        : [];
 
       return ui(
         [
-          quest.quest_prompt,
+          `arrive @: ${prettyArtworkLabel(q.artwork_id)}`,
+          q.quest_prompt,
           "Let me know when you are done -- but like, take your time. I am not going anywhere",
         ],
         [choice("I am done", "done")],
-        {
-          questId: quest.quest_id,
-          artwork: quest.artwork_id,
-          mode: p.mode,
-        }
+        { questId: q.quest_id, artwork: q.artwork_id, mode: p.mode },
+        events
       );
     }
 
     case "done":
+      // If you want a celebratory image here, add to events.
       return ui(
         ["sooo..... did you succeed in your side quest?"],
         [
@@ -1149,32 +1166,48 @@ function act(uid, action = "start", payload = {}) {
       );
 
     case "succeed": {
-      const quest = getquestById(p.currentquestId);
+      const q = getquestById(p.currentquestId);
       recordCompletion(p, p.currentquestId);
       addScore(uid);
-      const award =
-        quest?.award_text_on_complete ||
-        success_answers[Math.floor(Math.random() * success_answers.length)];
-      const continueChoices = [
-        choice(L(takeMeToAnotherQuestResponses), "questChoice"),
-        choice(L(noStopTheGameResponses), "bar"),
+
+      const award = q?.award_text_on_complete || L(success_answers);
+
+      // Use your Cloudinary “bot_main_mswase.gif” as a visual moment in the web UI
+      const events = [
+        {
+          type: "image",
+          url: "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380360/s2c/bot_main_mswase.gif",
+          caption: "✨ aura +1",
+        },
       ];
+
+      // If they’ve hit winAmount, also include the win token image
+      if (p.score >= winAmount) {
+        events.push({
+          type: "image",
+          url: "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760384377/s2c/Aktiv_1landscape_sx7ty6.png",
+          caption: "win token",
+        });
+      }
+
       return ui(
         [
-          award,
+          `${award} you have ${p.score} aura points`,
           "so do you wanna continue? we haven't even touched the edges of the simulation yet",
         ],
-        continueChoices,
-        { score: p.score }
+        [
+          choice(L(takeMeToAnotherQuestResponses), "questChoice"),
+          choice(L(noStopTheGameResponses), "bar"),
+        ],
+        { score: p.score },
+        events
       );
     }
 
     case "fail": {
-      const quest = getquestById(p.currentquestId);
+      const q = getquestById(p.currentquestId);
       recordCompletion(p, p.currentquestId);
-      const failLine =
-        quest?.fail_text_on_fail ||
-        fail_answers[Math.floor(Math.random() * fail_answers.length)];
+      const failLine = q?.fail_text_on_fail || L(fail_answers);
       return ui(
         [failLine, "¯_(ツ)_/¯ u could always try again?"],
         [
@@ -1184,6 +1217,7 @@ function act(uid, action = "start", payload = {}) {
       );
     }
 
+    // --------------- MISC ---------------
     case "bar":
       return ui(
         [
@@ -1206,15 +1240,16 @@ function act(uid, action = "start", payload = {}) {
         ]
       );
 
-    case "reset": {
+    case "reset":
       p.finishedquests = [];
       p.completedquests = [];
       p.currentArtWorkId = ANY;
+      p.currentquestId = undefined;
       return ui(
         ["progress reset."],
-        [choice("random quest", "quest"), choice("choose mode", "mode")]
+        [choice("random quest", "quest"), choice("choose mode", "mode")],
+        { score: p.score, mode: p.mode }
       );
-    }
 
     default:
       return ui([`Unknown action: ${action}`], [choice("restart", "start")]);

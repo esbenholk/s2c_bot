@@ -47,6 +47,9 @@
         padding: 16px;
         overflow: auto;
       }
+      .full {
+        inset: 10px 10px 400px;
+      }
       .choices {
         position: absolute;
         left: 10px;
@@ -130,17 +133,36 @@
             screen.appendChild(fig);
           }
           if (ev.type === "video") {
-            const vid = document.createElement("video");
-            vid.src = ev.url;
-            vid.controls = true;
-            vid.playsInline = true;
-            vid.muted = true;
-            vid.loop = true; // autoplay-friendly
-            vid.autoplay = true;
-            vid.style.maxWidth = "100%";
-            vid.style.borderRadius = "8px";
-            vid.style.margin = "8px 0";
-            screen.appendChild(vid);
+            console.log(ev.url);
+
+            if (!ev.url.includes(".gif")) {
+              const vid = document.createElement("video");
+              vid.src = ev.url;
+              vid.controls = true;
+              vid.playsInline = true;
+              vid.autoplay = true;
+              vid.muted = true;
+              vid.loop = true; // autoplay-friendly
+              vid.style.maxWidth = "100%";
+              vid.style.borderRadius = "8px";
+              vid.style.margin = "8px 0";
+              screen.appendChild(vid);
+            } else {
+              const img = document.createElement("img");
+              img.src = ev.url;
+              // vid.controls = true;
+              // vid.playsInline = true;
+              // vid.autoplay = true;
+              // vid.muted = true;
+              // vid.loop = true; // autoplay-friendly
+              img.style.width = "100%";
+              img.style.maxWidth = "500px";
+              img.style.height = "auto";
+              img.style.borderRadius = "50px";
+              // vid.style.margin = "8px 0";
+              screen.appendChild(img);
+            }
+
             if (ev.caption) {
               const cap = document.createElement("div");
               cap.className = "line dim";
@@ -159,10 +181,10 @@
           body: JSON.stringify({ action, payload }),
         });
         const ui = await res.json();
+        renderEvents(ui.events); // ← add this line
         print(ui.lines, false);
-        renderEvents(ui.events); // ← NEW
-        clearChoices();
 
+        clearChoices();
         (ui.choices || []).forEach((c) => {
           const b = document.createElement("button");
           b.textContent = c.label;
@@ -171,6 +193,11 @@
             call(c.action, c.payload || {});
           };
           choices.appendChild(b);
+          if (ui.choices.length > 7) {
+            screen.className = "screen full";
+          } else {
+            screen.className = "screen";
+          }
         });
       }
 
