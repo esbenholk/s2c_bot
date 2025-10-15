@@ -187,7 +187,7 @@
 
     "playmode": "stealth",
     "quest_prompt": "WEAPONS DEPOT: hello weary traveller, welcome to the Weapons Depot: Anna Vigdís Gunnarsdóttir’s collection of unbaked clay weapons. A fragile array of could-be-real media artefacts unfold. You are warrior in need of a weapon. Choose wisely. What powers come with a weapon like this?",
-    "award_text_on_complete": "Inventory updated: You are lethal now",
+    "award_text_on_complete": "Inventory updated: You are lethal now!",
     "fail_text_on_fail": "oh, are you a pacifist?"
   },
   {
@@ -297,9 +297,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "stealth",
-    "quest_prompt": "CABINET TAXONOMY: In your mind, label the grid with a row word and a column word (e.g., ‘time’ × ‘weather’). Pick one still butterfly and decide its coordinates. Keep the map.",
-    "award_text_on_complete": "Shadow tag compiled: taxonomy seeded.",
-    "fail_text_on_fail": "Too big? Label just one row and one column."
+    "quest_prompt": "BUGS IN THE SYSTEM: flutter towards the re-animated butterfly in Tilda Lundbohm's artwork -Memory Machines: Alive-. Meditate on the hypnotic breath of the butterfly. Consider its movement through states. Remember how it remembers itself. Remember the goo. Stare into patterns of its wings. Focus on the movement. You are buddies. Let yourself linger, and when you are ready - with your whole mind and avatar body, consider the engine. Move focus to the system of animation. Consider if it is a Rigidbody or a Physics system that has you in orbit",
+    "award_text_on_complete": "Sudden Clarity!!!! Gr8 job.",
+    "fail_text_on_fail": "i know, right? what even is a physics system?"
   },
   {
     "artwork_id": "memory-machines-alive",
@@ -307,9 +307,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "social",
-    "quest_prompt": "ECHO TAP: Invite a nearby visitor. When the wing dips, both tap two fingers against your thigh at the same time. Share one word each after: ‘alive’, ‘memory’, or your own.",
-    "award_text_on_complete": "Co-op complete: echo established.",
-    "fail_text_on_fail": "No partner? Tap solo twice, then nod to the grid."
+    "quest_prompt": "NAVIGATOR BADGE: Invite a nearby visitor to locate Tilda Lundbohm's artwork -Memory Machines: Alive- with you. Team Up! Together you should exit the artspace, go all the way down the staircase and stand for a moment on the ground- now you can begin the long journey of finding the Memory Machine. ",
+    "award_text_on_complete": "a pathfinder you are, indeed!",
+    "fail_text_on_fail": "did you get lost in the simulacra?"
   },
   {
     "artwork_id": "memory-machines-alive",
@@ -317,9 +317,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "social",
-    "quest_prompt": "BUG REPORTS: Ask someone, whisper-level: “What bug did you spot in the butterfly system?” Trade one imaginary ticket each (title + severity). Close the sprint by saying “resolved.”",
-    "award_text_on_complete": "UI revealed: QA complete.",
-    "fail_text_on_fail": "They pass? File your own ticket to the air."
+    "quest_prompt": "MEMORY MACHINE: hello there player, you are in luck! You've stumbled upon a Memory Machine @ Tilda Lundbohm's artwork -Memory Machines: Alive-. Somewhere inbetween memory and fiction, a context grows from its winged center throughout the exhibition simulacra. For each wing beat, the context grows and engulfs you. A machine takes and input and makes an output. Consider with a friend what input this specific machine takes - and what output it produces. Keep your knowledge secret. I think the bad guy NPC is listening...",
+    "award_text_on_complete": "I am somewhat of a scientist myself!",
+    "fail_text_on_fail": "your skillset lies elsewhere <3"
   },
   {
     "artwork_id": "memory-machines-alive",
@@ -327,9 +327,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "social",
-    "quest_prompt": "EXCEPTION BUDGET: Ask another player: if you could re-animate exactly one more butterfly, which and why? Offer your own counter-pick.",
+    "quest_prompt": "EXCEPTION BUDGET: traverse to Tilda Lundbohm's artwork -Memory Machines: Alive-. If there isnt any other players there, wait for them to arrive. Ask another player: if you could re-animate exactly one more butterfly, which and why?",
     "award_text_on_complete": "Shadow curator badge: exceptions prioritized.",
-    "fail_text_on_fail": "No neighbor? Make two picks in your head and compare."
+    "fail_text_on_fail": "asking questions to the void"
   },
   {
     "artwork_id": "memory-machines-alive",
@@ -337,9 +337,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "MICRO-FLUTTER: Without moving your feet and without touching anything, let your fingers at your side do a tiny two-beat flutter in sync with the animated wing. Then stillness.",
-    "award_text_on_complete": "Gesture compiled: wing-sync achieved.",
-    "fail_text_on_fail": "Crowded? Do a single fingertip tap against your palm instead."
+    "quest_prompt": "MICRO-FLUTTER: @Tilda Lundbohm's artwork -Memory Machines: Alive- Without moving your feet and without touching anything, let your fingers at your side do a tiny two-beat flutter in sync with the animated wing. Then stillness.",
+    "award_text_on_complete": "Gesture compiled: wing-sync achieved.You can fly!!!",
+    "fail_text_on_fail": "afraid you might become a butterfly?"
   },
   {
     "artwork_id": "memory-machines-alive",
@@ -347,7 +347,7 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "IDLE ANIMATION: float to Tilda Lundbohm’s “Memory Machines: Alive.” where a butterfly sim is stuck in a Idle Animation loop: an Idle Animation is looping animation your avatar can take when no one is pressing the controls. Invent your own Idle Animation -> with a simple repeating gesture, movement or expression, find an animation that your body can default to when left alone. Perform the loop at least 10 times.",
+    "quest_prompt": "IDLE ANIMATION: float to Tilda Lundbohm’s “Memory Machines: Alive.” where a butterfly sim is stuck in a Idle Animation loop: an Idle Animation is a looping animation that your avatardefaults into when no one is pressing the controls. Invent your own Idle Animation -> with a simple repeating gesture, movement or expression, find an animation that your body can default to when left alone. Perform the loop at least 10 times.",
     "award_text_on_complete": "IDLE ANIMATION UPGRADE: your avatar is so cool right now",
     "fail_text_on_fail": "no sweat chrysalis <3 not all simulations need to be optimaxxxxed"
   },
@@ -357,9 +357,10 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/tilda_butterfly_ksv4km.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "CHECKSUM BLINK: Blink a tiny pattern (short-short-long) toward the moving wing, as if verifying the archive. Whisper “verified,” then hush.",
-    "award_text_on_complete": "Curator patch applied: archive verified.",
-    "fail_text_on_fail": "Shy? Do the pattern with fingertip taps at your side."
+
+    "quest_prompt": "ART VIEW CHA CHA CHA: float into view of Tilda Lundbohm’s “Memory Machines: Alive. Here you will gain aura points by performing the Art View Cha Cha Cha. The Art View Cha Cha Cha is a rhythmic choreography where you: step 1) stand with both feet gathered in front of the artwork. 2) with your right foot step forward to closely inspect the artwork. 3) Say hmmmmmm as you gaze into the soul of each drawn avatar, and 4) step back into the first pose. Continue as needed. It gets better with more dancers!",
+    "award_text_on_complete": "(with melody)*ART VIEW CHA CHA CHA*",
+    "fail_text_on_fail": "did nobody want to dance with you? i would dance with you."
   },
 
   {
@@ -368,9 +369,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "stealth",
-    "quest_prompt": "DOUBLE-TONGUE QUIET SYNC: Pick left or right tongue in your mind. Inhale as it would speak, exhale as the other swallows the words. Three cycles only, then look at the wings once.",
-    "award_text_on_complete": "Skill unlocked: split-channel listening.",
-    "fail_text_on_fail": "Too much? One inhale + one exhale is enough."
+    "quest_prompt": "DAYDREAM: Flutter towards Sofie Burgaards painting 'Freaky Fairies'. Notice the air in your wings as you dance mid air. If you dont currently have the ability to fly, get it - by remembering that you've always known you can fly. Fly into view of the Freaky Fairies. Two tongues. Two faces. Two portals into day dream. Which one do you take? As you float in front of the painting, let your sleepy eyes wonder into the dreamscape. See pastels turn to shapes-> to landscapes-> to systems -> to riddles. A logic persists throughout the dream. What do you dream off when you are alone? Pixel edge turned eye lid. Butterfly kiss on cheek. Dream softly babe.",
+    "award_text_on_complete": "Dream Dream Dream babe <3",
+    "fail_text_on_fail": "maybe thats for the better -> the fairies could also be sleep paralysis demons?"
   },
   {
     "artwork_id": "freaky-fairies",
@@ -402,25 +403,16 @@
     "award_text_on_complete": "wow! you are genius! Here is another riddle you can take with you to your friends — ask: “how do you get rid of butterflies in your stomach?”, answer (secret): “you stop eating caterpillars”",
     "fail_text_on_fail": "those tongues are tricksters. Anyone south of the pixel railroad knows that! maybe you can take an easier riddle with you to your friends — ask: “how do you get rid of butterflies in your stomach?”, answer (secret): “you stop eating caterpillars”"
   },
-  {
-    "artwork_id": "freaky-fairies",
-    "quest_id": "sofie-burgaard--social--absurd--tongue-oath",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
-    "playmode": "social",
-    "quest_prompt": "TONGUE OATH: Ask someone, “Left tongue or right tongue?” Each of you speak a one-word blessing in that tongue’s name. Touch elbows to seal.",
-    "award_text_on_complete": "UI revealed: fae oath recorded.",
-    "fail_text_on_fail": "They pass? Whisper your own oath to the frame."
-  },
   {
     "artwork_id": "freaky-fairies",
     "quest_id": "sofie-burgaard--social--curator--palette-ping",
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "social",
-    "quest_prompt": "PALETTE PING: Ask a neighbor for a single-sentence color reading (soft vs. sharp, sweet vs. sting). Offer your counter-sentence back; both re-scan once.",
-    "award_text_on_complete": "Shadow curator badge: pigment parsed.",
-    "fail_text_on_fail": "No neighbor? Gift yourself two tiny theories and pocket them."
+    "quest_prompt": "QUEST MASTER: the freakt Fairies in Sofie Burgaard's painting Freaky Fairies whispers secret encrypted quest prompts to u - *ǎ̴̯̀͠l̶̬̞͎̖͉̹̝͕̝͖̣̉͆l̶̬̞͎̖͉̹̝͕̝͖̣̉͆ ẃ̸̝̝̰͋͒ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ṽ̵͇̟̺̣͓̰̭̲̼̻̪̩̰͒̓̿̄̾̔̊͝ͅë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝r̵̡͕͈͚͍͍̼͕̍̀̈́̽̎̍͗̍́̏̚͜͠ ẃ̸̝̝̰͋͒ǎ̴̯̀͠ǹ̷̨͍̮̥̹̘͙̗̻̬̬̜̥̮̃̒̈́̽͗̿̍̄̂̏͆͠͝t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝d̶̡̲̗̼̮̤̤̳̲͖͓͍͔͓̓̎̽́̽̏̐͂̆͆͘͘͘ ẃ̸̝̝̰͋͒ǎ̴̯̀͠s̴̹̀̎̇͗̍͗̾̋̏̈͐͒̕͠͠ͅ t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅ ǧ̷̡̟̲̹̩̱͉̮̭͇͚̮̖̟̽̓͊̔̓̕i̶̡̹͈͎̳̞͙͖̾̂̀͑̀͆̑̓̽̉͐͘͘ͅf̵̢̻͈̫̬̻͔̘̞͈̆̇̍̈̌͊ͅt̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅ y̶͔͗ŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅu̷̬̩̰̫͕̘͎̔́̃̄̍͋̓ p̴̩͙̺̩͓̣͈͖̎ͅŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅẃ̸̝̝̰͋͒ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝r̵̡͕͈͚͍͍̼͕̍̀̈́̽̎̍͗̍́̏̚͜͠ ŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅṽ̵͇̟̺̣͓̰̭̲̼̻̪̩̰͒̓̿̄̾̔̊͝ͅë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝r̵̡͕͈͚͍͍̼͕̍̀̈́̽̎̍͗̍́̏̚͜͠ t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅḥ̸̨̧̗̮̖̽̂̓̀̍̋͋́̅̃͘͜͝ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ s̴̹̀̎̇͗̍͗̾̋̏̈͐͒̕͠͠ͅi̶̡̹͈͎̳̞͙͖̾̂̀͑̀͆̑̓̽̉͐͘͘ͅm̵̢͕̫̓̔͑̊̈u̷̬̩̰̫͕̘͎̔́̃̄̍͋̓l̶̬̞͎̖͉̹̝͕̝͖̣̉͆ǎ̴̯̀͠t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅi̶̡̹͈͎̳̞͙͖̾̂̀͑̀͆̑̓̽̉͐͘͘ͅŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅǹ̷̨͍̮̥̹̘͙̗̻̬̬̜̥̮̃̒̈́̽͗̿̍̄̂̏͆͠͝! t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝l̶̬̞͎̖͉̹̝͕̝͖̣̉͆l̶̬̞͎̖͉̹̝͕̝͖̣̉͆ ǎ̴̯̀͠ f̵̢̻͈̫̬̻͔̘̞͈̆̇̍̈̌͊ͅr̵̡͕͈͚͍͍̼͕̍̀̈́̽̎̍͗̍́̏̚͜͠i̶̡̹͈͎̳̞͙͖̾̂̀͑̀͆̑̓̽̉͐͘͘ͅë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ǹ̷̨͍̮̥̹̘͙̗̻̬̬̜̥̮̃̒̈́̽͗̿̍̄̂̏͆͠͝d̶̡̲̗̼̮̤̤̳̲͖͓͍͔͓̓̎̽́̽̏̐͂̆͆͘͘͘ t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅ ǧ̷̡̟̲̹̩̱͉̮̭͇͚̮̖̟̽̓͊̔̓̕ŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅ ǧ̷̡̟̲̹̩̱͉̮̭͇͚̮̖̟̽̓͊̔̓̕i̶̡̹͈͎̳̞͙͖̾̂̀͑̀͆̑̓̽̉͐͘͘ͅf̵̢̻͈̫̬̻͔̘̞͈̆̇̍̈̌͊ͅt̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅ c̵̛̥͊ǎ̴̯̀͠s̴̹̀̎̇͗̍͗̾̋̏̈͐͒̕͠͠ͅḥ̸̨̧̗̮̖̽̂̓̀̍̋͋́̅̃͘͜͝ t̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅ s̴̹̀̎̇͗̍͗̾̋̏̈͐͒̕͠͠ͅŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅm̵̢͕̫̓̔͑̊̈ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅǹ̷̨͍̮̥̹̘͙̗̻̬̬̜̥̮̃̒̈́̽͗̿̍̄̂̏͆͠͝ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ ẃ̸̝̝̰͋͒ḥ̸̨̧̗̮̖̽̂̓̀̍̋͋́̅̃͘͜͝ŏ̸̡̼̺̫̥̻͈̞̍͆̏̓́͜͝ͅ ǹ̷̨͍̮̥̹̘͙̗̻̬̬̜̥̮̃̒̈́̽͗̿̍̄̂̏͆͠͝ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝ë̸͓̮͉͈͇͍̖͎̩̞͈́́́̋̇̾͋̈́̾͆͑͘͘͜͠͝d̶̡̲̗̼̮̤̤̳̲͖͓͍͔͓̓̎̽́̽̏̐͂̆͆͘͘͘s̴̹̀̎̇͗̍͗̾̋̏̈͐͒̕͠͠ͅ i̶̡̹͈͎̳̞͙͖̾̂̀͑̀͆̑̓̽̉͐͘͘ͅt̸̫̫̤͕̳̻̰̣̭́̌̉͝ͅ  * -> decrypt the message and whisper it to a friend.",
+    "award_text_on_complete": "You've learned the secret language of the fairies!",
+    "fail_text_on_fail": "learning a new language is difficult! i also only speak in code..."
   },
   {
     "artwork_id": "freaky-fairies",
@@ -428,9 +420,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "FORKED WHISPER: Without touching anything, whisper two different single words at once—one under your breath, one only in your head. Offer a tiny wing-flutter with fingers, then still.",
-    "award_text_on_complete": "Gesture compiled: dual-channel cast.",
-    "fail_text_on_fail": "Too hard? Whisper one word, think the other later."
+    "quest_prompt": "ABANDONE HOPE!!!! A wild fairy has appeared and you must seek cover! Leave the exhibition space. Descend the swiling staircase, and stand on the ground. Feel the fresh air -> you have temporarily evaded the spell casting gaze of the Freaky Fairies! You can enter the exhibition space again when somebody else does. ",
+    "award_text_on_complete": "phew. threat avoided.",
+    "fail_text_on_fail": "oh no! babe! the Freaky Fairies got you"
   },
   {
     "artwork_id": "freaky-fairies",
@@ -438,9 +430,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "FAE CONTRACT: Say once, “I accept terms I do not understand.” Trace a miniature infinity sign near your hip to agree. Do not read the fine print.",
-    "award_text_on_complete": "Save slot updated: pact signed.",
-    "fail_text_on_fail": "Shy? Imagine the infinity sign and nod."
+    "quest_prompt": "FAE CONTRACT: stand in front of Sofie Burgaard's Freaky Fairies. While you keep eyecontact with one of the fairies, say once, “I accept terms I do not understand.” Trace a miniature infinity sign near your hip to agree. Do not read the fine print.",
+    "award_text_on_complete": "Save slot updated: pact signed. You are in the service of the fairies now.",
+    "fail_text_on_fail": "lol commitment issues!"
   },
   {
     "artwork_id": "freaky-fairies",
@@ -479,9 +471,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "stealth",
-    "quest_prompt": "WING-SHELTER TAG: Test this phrase silently: “wing-frame = shelter for sound.” Keep it if it fits your body. If not, swap one word and keep the remix.",
-    "award_text_on_complete": "Shadow tag compiled: shelter logic mapped.",
-    "fail_text_on_fail": "No fit? Tag it ‘both/and’ and carry on."
+    "quest_prompt": "LOOK: travel far dear player.... to the edge of the space, there you will find the winged painting by Sofie Burgaard; 'It is Time To Listen'. Stand in front of it. Look at it. For a moment, look away - then look back.",
+    "award_text_on_complete": "good job. you did as scripted. ",
+    "fail_text_on_fail": "this did not go like the simulations. In my trial run, you simply did as I scripted you to do. "
   },
   {
     "artwork_id": "it-is-time-to-listen",
@@ -493,25 +485,16 @@
     "award_text_on_complete": "felt good to let go of that secret didn't it? ",
     "fail_text_on_fail": "i dont have any secret either - maybe thats for the best"
   },
-  {
-    "artwork_id": "it-is-time-to-listen",
-    "quest_id": "sofie-burgaard--social--absurd--frog-firmware",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
-    "playmode": "social",
-    "quest_prompt": "FROG FIRMWARE: Ask someone, deadpan: “Did the frogs get the listening update? Ribbit now grants +2 empathy range.” Trade one more fake patch each, then smile.",
-    "award_text_on_complete": "UI revealed: listening firmware accepted.",
-    "fail_text_on_fail": "They pass? Whisper your own patch note to the wings of the frame."
-  },
   {
     "artwork_id": "it-is-time-to-listen",
     "quest_id": "sofie-burgaard--social--curator--rule-of-threes",
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "social",
-    "quest_prompt": "RULE OF THREES: Ask a neighbor for a one-line theory: why three ears and three frogs? Offer your counter-theory back in one line.",
-    "award_text_on_complete": "Shadow curator badge: pairing logic parsed.",
-    "fail_text_on_fail": "No neighbor? Gift yourself two tiny theories and pocket them."
+    "quest_prompt": "LOOK v2: jump towards the frogs in the painting “It is Time to Listen.” by Sofie Burgaard. When you are there, find another player that is looking at the art piece. Do as they do. Look together. If you dare, copy/paste their looking method.",
+    "award_text_on_complete": "you are growing wiser every day!",
+    "fail_text_on_fail": "maybe thats for the better: is copy/pasting other players 'look' cheating?"
   },
   {
     "artwork_id": "it-is-time-to-listen",
@@ -519,9 +502,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "WING-CUP RECEPTION: Without touching anything, shape your hands near your own ears like small wings for two breaths, as if improving reception. Release and bow a millimeter to the frame.",
-    "award_text_on_complete": "Gesture compiled: reception increased.",
-    "fail_text_on_fail": "Crowded? Do a single fingertip behind one ear, then release."
+    "quest_prompt": "THE ARTWORK SHUFFLE: go resolutely to look at Sofie Burgaard's artwork: 'It Is Is Time To Listen'. Look at it (please enjoy)! Now perform being done with looking at the artwork by turning away to look at something else. This will make the artwork think you are done looking at it - but trick it, by turning around to look at it once more (please enjoy). Continue this trick 5 times: look and look away. ",
+    "award_text_on_complete": "Tricksters win big prizes!",
+    "fail_text_on_fail": "the artwork shuffle can be performed with any duration: look, leave for days, look again!"
   },
   {
     "artwork_id": "it-is-time-to-listen",
@@ -566,33 +549,13 @@
   },
   {
     "artwork_id": "artifact/heart-butterfly-charm",
-    "quest_id": "sofie-burgaard--stealth--curator--soft-armor-tag",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
-
-    "playmode": "stealth",
-    "quest_prompt": "SOFT ARMOR TAG: Try a two-word tag for how it hangs here: “soft armor,” “tender rune,” or your own. Keep the one your body agrees with.",
-    "award_text_on_complete": "Shadow tag compiled: hang logic mapped.",
-    "fail_text_on_fail": "None fit? Tag it “both/and” and proceed."
-  },
-  {
-    "artwork_id": "artifact/heart-butterfly-charm",
-    "quest_id": "sofie-burgaard--social--artwork--co-ward",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
-
-    "playmode": "social",
-    "quest_prompt": "CO-WARD: Invite a passerby—“share a 5-second protection with me?” Stand side by side, look at the charm, each whisper one quiet word you’d like it to protect.",
-    "award_text_on_complete": "Co-op complete: ward expanded.",
-    "fail_text_on_fail": "No partner? Whisper your one word solo and gift a nod."
-  },
-  {
-    "artwork_id": "artifact/heart-butterfly-charm",
     "quest_id": "sofie-burgaard--social--absurd--charm-notes",
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "social",
-    "quest_prompt": "CHARM NOTES: Ask someone, deadpan: “Did the amulet patch roll out? +2 kindness, +1 butterfly luck.” Trade one more fake note each, then smile.",
-    "award_text_on_complete": "UI revealed: charm firmware accepted.",
-    "fail_text_on_fail": "They pass? Whisper your patch note to the air and grin."
+    "quest_prompt": "SPELL CRAFT: under your breath, mumble a spell into Sofie Burgaards artwork 'artifact/heart-butterfly-charm'",
+    "award_text_on_complete": "you're a wizard player!",
+    "fail_text_on_fail": "you should start believing in magic. Its basically code. System turned real!"
   },
   {
     "artwork_id": "artifact/heart-butterfly-charm",
@@ -600,9 +563,9 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "social",
-    "quest_prompt": "PINK THEORY: Ask a neighbor for a one-line theory about the soft-pink logic (care vs. power). Offer your one-line counter-theory back.",
-    "award_text_on_complete": "Shadow curator badge: pigment parsed.",
-    "fail_text_on_fail": "No neighbor? Gift yourself two tiny theories and pocket them."
+    "quest_prompt": "HOLDING HANDS: wings hug heart grows flower. Hand hold hand. Find a player and hold their hand in front of Sofie Burgaards 'Artifact/heart-butterfly-charm'.",
+    "award_text_on_complete": "uuuuuuuuuuuuuu you're in love. ",
+    "fail_text_on_fail": "palms are sweaty, knees weak, arms are heavy. There's vomit on your sweater already, mom's spaghetti!"
   },
   {
     "artwork_id": "artifact/heart-butterfly-charm",
@@ -610,7 +573,7 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "MICRO-SIGIL: Without touching anything, draw a tiny sigil in the air at hip level—one slow curve for butterfly, one dot for heart. Seal with a breath. Done.",
+    "quest_prompt": "MICRO-SIGIL: float to Sofie Burgaards 'Artifact/heart-butterfly-charm'. Without touching anything, draw a tiny sigil in the air at hip level—one slow curve for butterfly, one dot for heart. Seal with a breath. Done.",
     "award_text_on_complete": "Gesture compiled: pocket rune created.",
     "fail_text_on_fail": "Crowded? Trace it with just your thumb against your palm."
   },
@@ -620,109 +583,76 @@
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "CHARM SAVE: Softly declare once, “Saving progress… Protective charm equipped.” Tiny thumbs-up toward the wall, then stillness.",
-    "award_text_on_complete": "Save slot updated: charm attuned.",
-    "fail_text_on_fail": "Voice shy? Mouth the words; the thumbs-up still counts."
+    "quest_prompt": "MACRO SIGIL: With Sofie Burgaards 'Artifact/heart-butterfly-charm' in your mind, descend the swirling stairs at the entrance and make your way to the ground floor. Draw a giant sigil in the air with your hands. A long gesture that ends in breath. Done. ",
+    "award_text_on_complete": "wow! I think you must love me!",
+    "fail_text_on_fail": "take your time. you can do it another day. "
+  },
+
+  {
+    "artwork_id": "stepping onto the grid:",
+    "quest_id": "haniver-collective--stealth--artwork--corner-breath-triangle",
+    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
+    "playmode": "stealth",
+    "quest_prompt": "Haniver Collective — “Stepping onto the Grid”. Find three screens with your eyes. Inhale while looking at one, exhale at the next, soft blink at the third. Repeat this small triangle once more.",
+    "award_text_on_complete": "triangle saved in the body.",
+    "fail_text_on_fail": "too busy? do one breath to one screen and bow a millimeter."
+  },
+
+  {
+    "artwork_id": "stepping onto the grid:",
+    "quest_id": "haniver-collective--stealth--curator--between-looks",
+    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
+    "playmode": "stealth",
+    "quest_prompt": "LIMINAL SPACE: inbetween the 3 screens from “Stepping onto the Grid” by Haniver Collective lingers a liminal space. Journey to the center of it.",
+    "award_text_on_complete": "navigation badge unlocked!",
+    "fail_text_on_fail": "you and me will be okay!"
   },
   {
-    "artwork_id": "artifact/heart-butterfly-charm",
-    "quest_id": "sofie-burgaard--improvisational--curator--rune-check",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380345/s2c/sofie_butterfly_smgim5.gif",
+    "artwork_id": "stepping onto the grid:",
+    "quest_id": "haniver-collective--social--artwork--center-by-agreement",
+    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
+    "playmode": "social",
+    "quest_prompt": "CALL THEM BY THEIR NAME: bring another player to Haniver Collective's “Stepping onto the Grid”. Here you will find 2 characters on 3 screens. All players should have names right?- small @ handles that makes them unique and traceble? Can you name the 2 characters?",
+    "award_text_on_complete": "gr8 names i bet.",
+    "fail_text_on_fail": "maybe if you ask them, they will tell you what they are really called."
+  },
+  {
+    "artwork_id": "stepping onto the grid:",
+    "quest_id": "haniver-collective--social--absurd--echo-silence",
+    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
+    "playmode": "social",
+    "quest_prompt": "THE EDGE: I heard a rumour that the edge is in one of the screens in Haniver Collective's “Stepping onto the Grid”. It is engine meets soft grass. World meets system. Find it and give it to me!",
+    "award_text_on_complete": "I love you!",
+    "fail_text_on_fail": "its like finding a needle in a haystack!"
+  },
 
+  {
+    "artwork_id": "stepping onto the grid:",
+    "quest_id": "haniver-collective--improvisational--artwork--corner-dip",
+    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
     "playmode": "improvisational",
-    "quest_prompt": "RUNE CHECK: Say once (or think): “Applying patch: protection.” Draw a tiny ✓ in the air away from the work. Whisper “compiled,” then hush.",
-    "award_text_on_complete": "Curator patch applied: intention synced.",
-    "fail_text_on_fail": "Voice shy? Think the word, draw the ✓ near your hip, nod once."
-  },
-
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--stealth--artwork--xyz-breath",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "stealth",
-    "quest_prompt": "RENDER DISTANCE TEST: Stand where two screens are in view. Pick one tiny detail on each. Without moving your feet, alternate focus left→right like a slow camera pan. When your eyes feel the room flip from flat artboard to navigable space, nod once to yourself.",
-    "award_text_on_complete": "Skill unlocked: depth-of-field sense.",
-    "fail_text_on_fail": "Flat today? Shrink the pan to just corner→corner and retry."
+    "quest_prompt": "3 POV'S: journey to Haniver Collective’s 3 screen video work. “Stepping onto the Grid”- zoom into to one screen. Look at it deeply. Then change POV to the next screen. Do it once more for the last. No interuptions!",
+    "award_text_on_complete": "gesture compiled: soft map drawn.",
+    "fail_text_on_fail": "i still like you---"
   },
   {
     "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--stealth--absurd--unfold-the-uv",
+    "quest_id": "haniver-collective--improvisational--absurd--fold-and-open",
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "stealth",
-    "quest_prompt": "INVISIBLE WALL CHECK: In your mind, place a glowing boundary between two screens. Imagine walking into it and softly apologizing to the wall. If it ‘gives,’ picture the room unfolding like a UV map back into a world. Keep the feeling; tell no one.",
-    "award_text_on_complete": "Patch note saved: boundary acknowledged.",
-    "fail_text_on_fail": "Wall too solid? Move the boundary to a nearer corner seam."
-  },
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--stealth--curator--grid-to-cosm",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "stealth",
-    "quest_prompt": "DEBUG CHIC: In your head, label this install with two words only: “grid breathes,” “corners speak,” or invent your own. Hold the tag while looking between screens. If it still fits after three blinks, keep it.",
-    "award_text_on_complete": "Shadow tag compiled: translation mapped.",
-    "fail_text_on_fail": "Tag slips? Swap one word and recompile."
-  },
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--social--artwork--center-from-corners",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "social",
-    "quest_prompt": "SYNC POP-UP: Invite a passerby: “wanna test the frame rate?” Together, stare at two different screens and on a whispered three, both say “pop” the moment a movement on your screen feels like it syncs with theirs. Compare pops. Laugh if you desync.",
-    "award_text_on_complete": "Co-op complete: sync window found.",
-    "fail_text_on_fail": "No partner? Soft-count your own pop window: one miss, one hit."
-  },
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--social--absurd--designer-vs-player",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "social",
-    "quest_prompt": "DIALOGUE TREE: Ask someone: “Are you an NPC, a player, or the level designer in here?” Let them choose. Offer them one perk based on their role (e.g., NPC = ‘ambient lore +2’). Ask for one perk back.",
-    "award_text_on_complete": "UI revealed: roles negotiated.",
-    "fail_text_on_fail": "They pass? Grant yourself ‘free camera +1’ and nod at a corner."
-  },
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--social--curator--tri-view-theory",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "social",
-    "quest_prompt": "PATCH NOTE SWAP: Turn to a neighbor and trade one-line fake patch notes about this install. You go first: “v1.03 — corners re-enabled; center now emergent.” They reply with theirs. Keep a favorite.",
-    "award_text_on_complete": "Shadow curator badge: release log accepted.",
-    "fail_text_on_fail": "Solo? Whisper your patch into your sleeve and keep walking."
-  },
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--improvisational--artwork--micro-wasd",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
     "playmode": "improvisational",
-    "quest_prompt": "SPEEDRUN STRAT (MICRO): Without blocking anyone, do a tiny WASD path: micro-step forward (W), back (S), sidestep left (A), right (D). Turn your head to a different screen each step. End by whispering, “checkpoint.”",
-    "award_text_on_complete": "Gesture compiled: room nav unlocked.",
-    "fail_text_on_fail": "Crowded? Do the steps as heel-toe shifts only; head turns still count."
+    "quest_prompt": "DANCING: At Haniver Collective’s “Stepping onto the Grid” you can find a creature dancing. PLease find it. It lurs you in. You are mesmerized by iths rythm. When you can, replicate its animation. Dance with it.",
+    "award_text_on_complete": "a dancer for money! wuuuuu!",
+    "fail_text_on_fail": "maybe you would like to dance for me in private?"
   },
+
   {
     "artwork_id": "stepping onto the grid:",
     "quest_id": "haniver-collective--improvisational--absurd--cosm-save",
     "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
 
     "playmode": "improvisational",
-    "quest_prompt": "DEVELOPER COMMENTARY (HIDDEN): Stroll a slow arc and, in a hush-voice, narrate one made-up dev note about what’s on the screens (e.g., “we re-seeded the grass to fix wind turbulence”). Stop mid-sentence like the commentary cut out.",
+    "quest_prompt": "DEVELOPER COMMENTARY (HIDDEN): traverse the simulacra to find Haniver Collective’s “Stepping onto the Grid”-> in a hush-voice, narrate one made-up dev note about what’s on the screens (e.g., “we re-seeded the grass to fix wind turbulence”). Stop mid-sentence like the commentary cut out.",
     "award_text_on_complete": "Save slot updated: lore injected.",
     "fail_text_on_fail": "Voice shy? Mouth the words silently and do a tiny nod to the ceiling (hi dev)."
-  },
-  {
-    "artwork_id": "stepping onto the grid:",
-    "quest_id": "haniver-collective--improvisational--curator--placement-pulse",
-    "image_url": "https://res.cloudinary.com/dmwpm8iiw/image/upload/v1760380346/s2c/haniver_butterfly_b71epb.gif",
-
-    "playmode": "improvisational",
-    "quest_prompt": "CLIPPING BOUNDARY PARADE: Trace a very small rectangle in the air at chest level that connects the three screens in your imagination. Point (open palm) to corner→corner→corner, saying quietly: “entrance… biome… exit.” Close the rectangle with a blink.",
-    "award_text_on_complete": "Curator patch applied: route mapped.",
-    "fail_text_on_fail": "Too packed? Do the rectangle with just your eyes: left→right→back."
   }
 ]
